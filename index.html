@@ -1,5 +1,6 @@
 <html>
 <head>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<title> Glitchy | Cyborg</title>
 	<style>
 		ul#menu li
@@ -22,7 +23,39 @@
 	<a href="puppy.jpg">puppy</a></p>
 
 	<h1 id="About"> About </h1>
+	<p>Glitchy Cyborg is the front end for my personal "super" computer, Gaea.
+	The joke here bing that it made of small ARM architecture quad core single board computers
+	</p>
+
+	<p>It's not intended to do any real serious computations but for those looking to develop
+	test or maybe just play around.
+	I'm making it available to others for a couple reason, mostly learning purposes.
+	
+	<p> Please keep in mind, I'm no expert, just passionately curious</p>
 
 	<h1 id="Tech Specs"> Technical Specs </h1>
+	<p>Gaea consist of a 5 <a href="https://www.pine64.org/devices/
+	single-board-computers/rock64/">Rock64</a> single board computers from Pine64
+	Like most SOCs, the ROCK64 uses ARM cores which use a reduced Instruction (RISC)
+	and are considered more power efficient than their CISC counteparts</p>
+	<h2>Rock64 v2 specs </h2>
+	<figure>
+		<img src="Assets/Pictures/ROCK64_600x355.jpg" alt="photgraph of Rock64" />
+		<br/>
+		<figcaption> Image taken from Pine64.org </figcaption>
+	</figure>
+	<ul id="specs">
+		<li>Rockchip RK3328 CPU</li>
+		<ul id="RK3328">
+			<li> quad core</li> 
+			<li> A53 ARM cores</li>
+			<li> 64 bit</li>
+		</ul>
+		<li>2 Gb DDR3 RAM</li>
+		<li> 32 Gb emmc storage</li>
+	</ul>
+	<p>The cluster uses a Beowolf architecture (1 login node, 4 slave nodes)
+	with 64 Gb of steady state scratch storage. Additional info can be found at
+	<a href="www.pine64.org">Pine64.org</a></p>
 </body>
 </html>
