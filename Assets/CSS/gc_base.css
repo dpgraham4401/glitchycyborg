@@ -1,0 +1,32 @@
+* {
+font-family: sans-serif, serif, arial;
+font-size: 16px;
+background-color: rgb(225,225,225);
+text-align: justify;
+min-width: 40em;
+max-width: 75em;
+}
+
+a {
+text-decoration: none;
+font-weight: bold;
+}
+
+a:link {
+color: CadetBlue;
+}
+
+a:visited {
+color:CadetBlue;
+}
+
+a:hover {
+color: DarkSlateGray;
+}
+
+#menu li {
+display: inline;
+}
+
+#comment_field {
+}

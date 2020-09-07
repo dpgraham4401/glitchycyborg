@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -11,13 +12,32 @@
 	<h1> Glitchy Cybord </h1>
 	<ul id="menu">
 		<li><a href="index.html">Home</a></li>
-		<li><a href="#About">About</a></li>
+		<li><a href="index.html#About">About</a></li>
 		<li><a href="registration.html">Registration</a></li>
-		<li><a href="#Tech Specs">Tech Specs</a></li>
+		<li><a href="index.html#Tech Specs">Tech Specs</a></li>
 	</ul>
 </head>
 <body>
-	<form actiion="registration.php">
+	<form action="registration.php">
+	<fieldset>
+		<legend>Sign up</legend>
+		<label>First Name:<br />
+		<input type="text" name ="fname"/></label><br />
+		<label>Last Name:<br />
+		<input type="text" name="lname"/></label><br />
+		<label>Email:<br />
+		<input type="email" name="email"required="required"></label><br />
+		<label>Password:<br />
+		<input type="text" name="psswd1" required="required"/></label><br />
+		<label>Confirm Password:<br />
+		<input type="text" name="psswd2" required="required"/></label><br />
+		<input type="submit" value="submit" />
+	</fieldset>
+	</form>
+
+
+
+<!--	<form actiion="registration.php">
 		<p> 
 		First Name:
 			<input type="text" name="fname" size="15" maxlength="20">
@@ -32,5 +52,6 @@
 		Confirm Password
 			<input type="password" name="psswd2" size="15" maxlength="30"</p>
 	</form>
+-->
 </body>
 </html>
