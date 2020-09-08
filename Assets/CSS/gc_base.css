@@ -1,10 +1,15 @@
 * {
 font-family: sans-serif, serif, arial;
 font-size: 16px;
-background-color: rgb(225,225,225);
+text-align: justify;
+/*background-color: rgb(225,225,225);
 text-align: justify;
 min-width: 40em;
-max-width: 75em;
+max-width: 75em;*/
+}
+
+body {
+width: 75%;
 }
 
 a {
@@ -28,5 +33,19 @@ color: DarkSlateGray;
 display: inline;
 }
 
-#comment_field {
+fieldset {
+width: 350px;
+border: 1px solid #dcdcdc;
+border-radius: 10px;
+padding: 20px;
+text-align: left;
+}
+
+legend {
+background-color: #efefef;
+border: 1px solid #dcdcdc;
+border-radius: 10px;
+padding: 10px 20px;
+text-align: left;
+text-transform: uppercase;
 }

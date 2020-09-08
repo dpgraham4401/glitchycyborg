@@ -1,0 +1,42 @@
+#menu ul li{
+display: inline;
+}
+
+.text_body_left {
+width: 69%;
+left: 2%;
+position: absolute;
+top: 15%;
+}
+
+div#right_text{
+position: absolute;
+top: 15%;
+right: 0%;
+width: 25%;
+height: 75em;
+background-color: gray;
+margin: 0%;
+padding: 1%;
+}
+
+div#menu {
+position: fixed;
+top: 0%;
+left: 0%;
+width: 100%;
+height: 15%;
+background-color: DarkSlateGray;
+display: inline;
+z-index: 1;
+}
+
+div#footer {
+position: fixed;
+bottom: 0%;
+width: 100%;
+height: 10%;
+margin: 0%;
+padding: 1%;
+background-color: DarkSlateGray;
+}
