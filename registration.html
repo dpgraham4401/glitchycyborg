@@ -1,57 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href="Assets/CSS/gc_base.css" type="text/css" rel="stylesheet" />
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<title> Glitchy | Cyborg</title>
-	<style>
-		ul#menu li
-		{
-  		display:inline;
-		}
-	</style>
-	<h1> Glitchy Cybord </h1>
-	<ul id="menu">
-		<li><a href="index.html">Home</a></li>
-		<li><a href="index.html#About">About</a></li>
-		<li><a href="registration.html">Registration</a></li>
-		<li><a href="index.html#Tech Specs">Tech Specs</a></li>
-	</ul>
+	<meta name="description"
+	      content="single board computer clusters" />
+	<meta name="keywords"
+	      content="SOC, Rock64, cluster, single board computer, public, free" />
+	<meta name="robots"
+	      content="nofollow"/>
+	<meta http-equiv="author"
+	      content="David Graham" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	
+	 <title> Glitchy | Cyborg</title>
 </head>
 <body>
-	<form action="registration.php">
-	<fieldset>
-		<legend>Sign up</legend>
-		<label>First Name:<br />
-		<input type="text" name ="fname"/></label><br />
-		<label>Last Name:<br />
-		<input type="text" name="lname"/></label><br />
-		<label>Email:<br />
-		<input type="email" name="email"required="required"></label><br />
-		<label>Password:<br />
-		<input type="text" name="psswd1" required="required"/></label><br />
-		<label>Confirm Password:<br />
-		<input type="text" name="psswd2" required="required"/></label><br />
-		<input type="submit" value="submit" />
-	</fieldset>
-	</form>
-
-
-
-<!--	<form actiion="registration.php">
-		<p> 
-		First Name:
-			<input type="text" name="fname" size="15" maxlength="20">
-		Last name: 
-			<input type="text" name="lname" size="15" maxlength="30"></p>
-		<p> 
-		Username:
-			<input type="text" name="username" size="15" maxlength="30"/> </p>
-		<p>
-		Password:
-			<input type="password" name="psswd1" size="15" maxlength="30"/>
-		Confirm Password
-			<input type="password" name="psswd2" size="15" maxlength="30"</p>
-	</form>
--->
+    <header id="menu">   
+        <h2> Glitchy Cyborg </h2> 
+		<ul id="nav_list">
+		    <li><a href="index.html"> Home </a></li>|
+		    <li><a href="About"> About </a></li>|
+		    <li><a href="registration.html"> Registration </a></li>|
+		    <li><a href="Tech Specs"> Tech Specs </a></li>|
+		    <li><a href="Comment"> Leave Feedback</a></li>
+            </ul>
+    </header>
+    <div id="container" >
+        <div id="main">
+	        <form id = "registration" action="registration.php">
+	            <fieldset>
+	        	<legend>Sign up</legend>
+            		<label>First Name:<br />
+	                	<input type="text" name ="fname"/></label><br />
+	            	<label>Last Name:<br />
+	                	<input type="text" name="lname"/></label><br />
+            		<label>Username:<br />
+	                	<input type="text" name="uname"/></label><br />
+		            <label>Email:<br />
+		                <input type="email" name="email" required="required"></label><br />
+		            <label>Password:<br />
+		                <input type="password" name="psswd1" required="required"/></label><br />
+		            <label>Confirm Password:<br />
+		                <input type="password" name="psswd2" required="required"/></label><br />
+		                <input type="submit" value="submit" />
+	            </fieldset>
+	        </form>
+        </div>
+    </div>
+    <footer id="footer">
+        <p>This IS a footer </p>
+    </footer>
 </body>
 </html>

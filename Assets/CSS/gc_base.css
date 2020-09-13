@@ -1,51 +1,104 @@
 * {
-font-family: sans-serif, serif, arial;
-font-size: 16px;
-text-align: justify;
-/*background-color: rgb(225,225,225);
-text-align: justify;
-min-width: 40em;
-max-width: 75em;*/
+    margin: 0;
+    padding: 0;
+    color: #000066;
+    font-family: sans-serif;
 }
 
-body {
-width: 75%;
-}
-
-a {
-text-decoration: none;
-font-weight: bold;
-}
-
-a:link {
-color: CadetBlue;
-}
-
-a:visited {
-color:CadetBlue;
-}
-
-a:hover {
-color: DarkSlateGray;
-}
-
-#menu li {
-display: inline;
+html, body {
+    height: 100%;
 }
 
 fieldset {
-width: 350px;
-border: 1px solid #dcdcdc;
-border-radius: 10px;
-padding: 20px;
-text-align: left;
+    width: 30%;
+    margin: auto;
+    margin-top: 5%;
+    box-shadow: 0px 0px 3px #222222;
+    padding: 2%;
 }
 
 legend {
-background-color: #efefef;
-border: 1px solid #dcdcdc;
-border-radius: 10px;
-padding: 10px 20px;
-text-align: left;
-text-transform: uppercase;
+    background-color: Gainsboro;
+    border: 1px solid Gray;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: left;
 }
+
+#container {
+    position: relative; top: 5%;
+    min-height: 100%;
+    margin-bottom: 5%;
+    overflow: auto;
+}
+
+#main {
+    overflow: auto;
+    height: 1500px;
+}
+
+#menu {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    background-color: Gainsboro;
+    background-image: linear-gradient(LightSteelBlue, #93aed2);
+    box-shadow: 0px 0px 3px #222222;
+}
+
+.menu-content {
+    display: inline-block;
+    text-align: right;
+}
+
+#nav {
+    margin-top: 3%;
+}
+
+#menu ul li{
+    display: inline-block;
+    text-align: right;
+}
+
+#left_text {
+    float: left;
+    width: 69%;
+    overflow: auto;
+}
+
+#right_text {
+    float: right;
+    width: 25%;
+    height: 100%;
+    background-color: Gainsboro;
+    background-image: linear-gradient(to left, Gainsboro, Silver);
+    box-shadow: 0px 0px 3px #222222;
+    /*border: thin Gray;
+    border-style: none none none solid;*/
+    overflow: auto;
+}
+#footer {
+    position: relative;
+    height: 5%;
+    margin-top: -5%;
+    min-height: 50px;
+    clear: both;
+    background-color:  #93aed2;
+    background-image: linear-gradient(#93aed2, LightSteelBlue);
+}
+
+a, a:link, a:visited {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color:DimGray;
+}
+
+
