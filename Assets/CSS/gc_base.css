@@ -22,6 +22,12 @@ html, body {
     box-shadow: 0px 0px 3px #222222;
 }
 
+.menu-content img {
+    flex-shrink: 0;
+    height: 100%;
+    width: 100%;
+}
+
 #left_text {
     overflow: auto;
 }
@@ -47,8 +53,11 @@ a:hover {
     color:DimGray;
 }
 
-.menu-content img {
-    max-width: 100%;
+.menu-content {
+    display: inline-block;
+    text-align: left;
+    height: 100%;
+    vertical-align: middle;
 }
 
 #main {
@@ -71,29 +80,15 @@ a:hover {
         justify-content: space-between;
         
     }
-    #menu-icon img {
-        height: 1000%;
-        width: 1000%;
-
-    }
     
     #menu-title {
         display: none;
     }
-    
-    .menu-content {
-        display: inline-block;
-        text-align: left;
-        height: 10%;
-    }
 
     #nav {
         text-align: right;
-    }
-
-    #main {
-    justify-content: flex-end;
-    display: block;
+        margin-right: 1%;
+        margin-top: 1%;
     }
 
     #container {
@@ -101,6 +96,11 @@ a:hover {
         min-height: 100%;
         margin-bottom: 5%;
         overflow: auto;
+    }
+
+    #main {
+    justify-content: flex-end;
+    display: block;
     }
 
     #left_text {
@@ -122,8 +122,58 @@ a:hover {
     }
 
 }
+/* End mobile viewport style */
 
+/* Begin Desktop viewport style */
+@media only screen and (min-width: 601px) {
 
+    #menu {
+        height: 5%;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    #nav {
+        text-align: right;
+        margin-right: 1%;
+        vertical-align: middle;
+
+    }
+
+    #container {
+        position: relative; top: 5%;
+        min-height: 100%;
+        margin-bottom: 5%;
+        overflow: auto;
+    }
+
+    #main {
+    justify-content: flex-end;
+    min-height: 1000px;
+    }
+
+    #left_text {
+        width: 74%;
+    }
+
+    #right_text {
+        height: 100%;
+        width: 25%;
+        background-color: Gainsboro;
+        background-image: linear-gradient(to top, Gainsboro, Silver);
+        box-shadow: 0px 0px 3px #222222;
+        overflow: auto;
+        min-height: 1400px;
+    }
+    
+    #footer {
+        height: 5%;
+        margin-top: -5%;
+        min-height: 75px;
+    }
+
+}
 
 /* #right_text {
     float: right;
