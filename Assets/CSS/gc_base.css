@@ -16,16 +16,34 @@ html, body {
     width: 100%;
     position: fixed;
     display: flex;
+    align-content: center;
     z-index: 1;
     background-color: Gainsboro;
     background-image: linear-gradient(LightSteelBlue, #93aed2);
     box-shadow: 0px 0px 3px #222222;
 }
 
+.menu-content {
+    display: inline-block;
+    text-align: left;
+    height: 100%;
+    vertical-align: bottom;
+}
+
 .menu-content img {
     flex-shrink: 0;
     height: 100%;
     width: 100%;
+}
+
+#nav {
+    /*display: flex;*/
+    justify-content: space-between;
+}
+
+.nav_content {
+  position: relative;
+  display: inline-block;
 }
 
 #left_text {
@@ -53,22 +71,48 @@ a:hover {
     color:DimGray;
 }
 
-.menu-content {
-    display: inline-block;
-    text-align: left;
-    height: 100%;
-    vertical-align: middle;
-}
-
 #main {
     overflow: auto;
     display: flex;
 }
 
-#menu ul li{
-    display: inline-block;
-    text-align: right;
+/* menu Dropdown Button */
+.btn {
+  margin-top: 20%;
+  width: 75px;
+  font-weight: bold;
+  box-shadow: 0px 0px 2px #222222;
+  background-color: Silver;
+  border: 1px solid gray;
+  padding: 8% 8%;
+  border-radius: 5px;
+  transition-duration: .4s;
 }
+
+
+.btn:hover {
+    background-color: Gainsboro;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 40px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+.show {display:block;}
 /* End base style */
 
 /* Begin mobile viewport style */
@@ -87,7 +131,7 @@ a:hover {
 
     #nav {
         text-align: right;
-        margin-right: 1%;
+        margin-right: 5%;
         margin-top: 1%;
     }
 
@@ -136,8 +180,8 @@ a:hover {
 
     #nav {
         text-align: right;
-        margin-right: 1%;
-        vertical-align: middle;
+        margin-right: 5%;
+
 
     }
 
@@ -161,7 +205,7 @@ a:hover {
         height: 100%;
         width: 25%;
         background-color: Gainsboro;
-        background-image: linear-gradient(to top, Gainsboro, Silver);
+        background-image: linear-gradient(to left, Gainsboro, Silver);
         box-shadow: 0px 0px 3px #222222;
         overflow: auto;
         min-height: 1400px;
@@ -192,38 +236,3 @@ legend {
     text-align: left;
 }
 
-/* menu Dropdown Button */
-.dropbtn {
-  margin-top: 10%;
-  font-weight: bold;
-  box-shadow: 0px 0px 3px #222222
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 20px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
