@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!-- Metadata -->
 	<link href="Assets/CSS/gc_base.css" type="text/css" rel="stylesheet"/>
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<meta name="description"
@@ -12,11 +13,13 @@
 	<meta http-equiv="author"
 	      content="David Graham" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-	
+	<script type="text/javascript" src="Assets/JS/gc_base_func.js"></script>
 	<title> Glitchy | Cyborg</title>
 </head>
 <body>
+	<!-- Header -->
     <header id="menu">
+    	<!-- leftside of the header -->
         <div id="menu-left">
             <div id="menu-icon" class="menu-content">
                  <img src="Assets/Pictures/icon3_60x54.png" alt="icon"/>
@@ -25,24 +28,26 @@
                    <h2> Glitchy Cyborg </h2>
             </div>
         </div>
-        <div id="nav" class="menu-content">
+        <!-- Navigation (right side of the header) -->
+        <div id="menu-right" class="menu-content">
             <div class="nav_content">
                 <a href="registration.html">
                     <button class="btn">Sign up</button>
                 </a>
             </div>        
             <div class="nav_content">
-                <script type="text/javascript" src="Assets/JS/menudrop.js"></script>
+                <!-- <script type="text/javascript" src="Assets/JS/menudrop.js"></script> -->
                     <button onclick="menudrop()" class="btn" id="dropbtn">Menu</button>
                 <div id="myDropdown" class="dropdown-content">
-                    <a hhref="index.html"> Home </a>
-                    <a href="registration.html"> Sign Up </a>
-                    <a ref="Tech_Specs.html"> Tech Specs </a> 
-                    <a href="#Comment"> Leave Feedback</a>
+                    <a href="index.html">Home </a>
+                    <a href="registration.html">Sign Up </a>
+                    <a href="Tech_Specs.html">Tech Specs </a> 
+                    <a href="#Comment">Leave Feedback</a>
                 </div>
             </div>  
         </div>
     </header>
+    <!-- main content -->
     <div id="container">
         <div id="main">
             <div id="left_text" class="text_body_left">
@@ -53,6 +58,7 @@
             </div>
         </div>
     </div>
+    <!-- footer -->
     <footer id="footer">
         <p>this is a footer</p>
     </footer>

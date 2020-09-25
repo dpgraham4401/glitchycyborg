@@ -16,15 +16,34 @@
 	 <title> Glitchy | Cyborg</title>
 </head>
 <body>
-    <header id="menu">   
-        <h2> Glitchy Cyborg </h2> 
-		<ul id="nav_list">
-		    <li><a href="index.html"> Home </a></li>|
-		    <li><a href="About"> About </a></li>|
-		    <li><a href="registration.html"> Registration </a></li>|
-		    <li><a href="Tech Specs"> Tech Specs </a></li>|
-		    <li><a href="Comment"> Leave Feedback</a></li>
-            </ul>
+    <header id="menu">
+    	<!-- leftside of the header -->
+        <div id="menu-left">
+            <div id="menu-icon" class="menu-content">
+                 <img src="Assets/Pictures/icon3_60x54.png" alt="icon"/>
+            </div>
+            <div id="menu-title" class="menu-content">
+                   <h2> Glitchy Cyborg </h2>
+            </div>
+        </div>
+        <!-- Navigation (right side of the header) -->
+        <div id="menu-right" class="menu-content">
+            <div class="nav_content">
+                <a href="registration.php">
+                    <button class="btn">Sign up</button>
+                </a>
+            </div>        
+            <div class="nav_content">
+                <script type="text/javascript" src="Assets/JS/menudrop.js"></script>
+                    <button onclick="menudrop()" class="btn" id="dropbtn">Menu</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="http://www.glitchycyb.org"> Home </a>
+                    <a href="registration.php"> Sign Up </a>
+                    <a href="Tech_Specs.php"> Tech Specs </a> 
+                    <a href="#Comment"> Leave Feedback</a>
+                </div>
+            </div>  
+        </div>
     </header>
     <div id="container" >
         <div id="main">
