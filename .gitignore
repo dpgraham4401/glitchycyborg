@@ -1,3 +1,6 @@
+#This file
+.gitignore
+
 #Ignore phpmyadmin page
 phpmyadmin
 
