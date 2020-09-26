@@ -1,0 +1,9 @@
+#Ignore phpmyadmin page
+phpmyadmin
+
+#Old files
+Assets/Old
+Assets/Templates
+
+#VScode
+vscode.*
