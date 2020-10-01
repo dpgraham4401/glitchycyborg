@@ -20,7 +20,7 @@
     <header id="menu">
         <div id="menu-left">
             <div id="menu-icon" class="menu-content">
-                 <img src="Assets/Pictures/icon3_60x54.png" alt="icon"/>
+                 <img src="../Assets/Pictures/icon3_60x54.png" alt="icon"/>
             </div>
             <div id="menu-title" class="menu-content">
                    <h2> Glitchy Cyborg </h2>
@@ -28,7 +28,7 @@
         </div>
         <div id="menu-right">
             <div class="nav_content">
-                <a href="registration.php">
+                <a href="Registration/signup.php">
                     <button class="btn">Sign up</button>
                 </a>
             </div>        
@@ -37,8 +37,8 @@
                     <button onclick="menudrop()" class="btn" id="dropbtn">Menu</button>
                 <div id="myDropdown" class="dropdown-content">
                     <a href="http://www.glitchycyb.org"> Home </a>
-                    <a href="registration.php"> Sign Up </a>
-                    <a href="Tech_Specs.php"> Tech Specs </a> 
+                    <a href="Registration/signup.php"> Sign Up </a>
+                    <a href="Technical/tech_Specs.php"> Tech Specs </a> 
                     <a href="#Comment"> Leave Feedback</a>
                     <a href="Test/test.php"> Test</a> 
                 </div>

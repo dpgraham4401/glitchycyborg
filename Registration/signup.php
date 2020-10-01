@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href="Assets/CSS/gc_base.css" type="text/css" rel="stylesheet" />
+	<link href="../Assets/CSS/gc_base.css" type="text/css" rel="stylesheet" />
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<meta name="description"
 	      content="single board computer clusters" />
@@ -20,7 +20,7 @@
     	<!-- leftside of the header -->
         <div id="menu-left">
             <div id="menu-icon" class="menu-content">
-                 <img src="Assets/Pictures/icon3_60x54.png" alt="icon"/>
+                 <img src="../Assets/Pictures/icon3_60x54.png" alt="icon"/>
             </div>
             <div id="menu-title" class="menu-content">
                    <h2> Glitchy Cyborg </h2>
@@ -29,17 +29,17 @@
         <!-- Navigation (right side of the header) -->
         <div id="menu-right" class="menu-content">
             <div class="nav_content">
-                <a href="registration.php">
+                <a href="../Registration/signup.php">
                     <button class="btn">Sign up</button>
                 </a>
             </div>        
             <div class="nav_content">
-                <script type="text/javascript" src="Assets/JS/menudrop.js"></script>
+                <script type="text/javascript" src="../Assets/JS/menudrop.js"></script>
                     <button onclick="menudrop()" class="btn" id="dropbtn">Menu</button>
                 <div id="myDropdown" class="dropdown-content">
                     <a href="http://www.glitchycyb.org"> Home </a>
-                    <a href="registration.php"> Sign Up </a>
-                    <a href="Tech_Specs.php"> Tech Specs </a> 
+                    <a href="../Registration/signup.php"> Sign Up </a>
+                    <a href="../Technical/tech_Specs.php"> Tech Specs </a> 
                     <a href="#Comment"> Leave Feedback</a>
                 </div>
             </div>  
