@@ -49,9 +49,10 @@
         <div id="main">
             <div id="left_text" class="text_body_left">
                 <h2> Welcome to Glitchy Cyborg </h2>
-                <p>Thank you for visiting, Glitchy Cyborg is currently under construction<br> 
-                Come back and visit us in a couple months <br>
-                In the meantime, here is a picture of a <a href="/Assets/Pictures/puppy.jpg"> Puppy </a></p>
+                <p>Thank you for visiting, Glitchy Cyborg is currently under construction
+                Come back and visit us in a couple months </p>
+                <br>
+                <p>In the meantime, here is an picture of a <a href="/Assets/Pictures/puppy.jpg"> Puppy! </a></p>
             </div>
             <div id="right_text" class="text_right_body">
                 <div class="search-container" class="right-el">

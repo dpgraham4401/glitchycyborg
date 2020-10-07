@@ -47,24 +47,13 @@
     </header>
     <div id="container" >
         <div id="main">
-	        <form id = "registration" action="registration.php" method="POST">
-	            <fieldset>
-	        	<legend>Sign up</legend>
-            		<label>First Name:<br />
-	                	<input type="text" name ="fname"/></label><br />
-	            	<label>Last Name:<br />
-	                	<input type="text" name="lname"/></label><br />
-            		<label>Username:<br />
-	                	<input type="text" name="uname"/></label><br />
-		            <label>Email:<br />
-		                <input type="email" name="email" required="required"></label><br />
-		            <label>Password:<br />
-		                <input type="password" name="psswd1" required="required"/></label><br />
-		            <label>Confirm Password:<br />
-		                <input type="password" name="psswd2" required="required"/></label><br />
-		                <input type="submit" value="submit" />
-	            </fieldset>
-	        </form>
+            <div id="left_text">
+                <h3 id="thanks"> Thanks for registering! </h3>
+                <p> You can head back to our <a href="http://www.glitchycyb.org"> homepage </a> or... I dunno, do what you want. 
+                There's nothing else on the site yet soooo... yeaahhhh. This is awkward.</p>
+                <br>
+                <p>Enventually there'll be something here on how to get started ater signing up </p>
+            </div>
         </div>
     </div>
     <footer id="footer">
