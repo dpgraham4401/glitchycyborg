@@ -29,7 +29,7 @@
         <div id="menu-right" class="menu-content">
             <div class="nav_content">
                 <a href="../Registration/signup.php">
-                    <button class="btn">Sign up</button>
+                    <button class="btn">Sign In</button>
                 </a>
             </div>        
             <div class="nav_content">
@@ -37,7 +37,7 @@
                     <button onclick="menudrop()" class="btn" id="dropbtn">Menu</button>
                 <div id="myDropdown" class="dropdown-content">
                     <a href="http://www.glitchycyb.org"> Home </a>
-                    <a href="../Registration/signup.php"> Sign Up </a>
+                    <a href="../Registration/signup.php"> Sign In </a>
                     <a href="../Technical/tech_Specs.php"> Tech Specs </a> 
                     <a href="#Comment"> Leave Feedback</a>
                 </div>
@@ -63,7 +63,7 @@
     <footer id="footer">
         <p>Check out our <a href="https://github.com/dpgraham4401/glitchycyborg">GitHub </a> for updates</p>
         <?php
-        echo "Last Commit<br>";
+        echo "Last Commit: ";
         system("git log -1 --format=%cd | awk '{print $1,$2,$3}'");
         ?>
     </footer>

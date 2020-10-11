@@ -30,7 +30,7 @@
         <div id="menu-right" class="menu-content">
             <div class="nav_content">
                 <a href="../Registration/signup.php">
-                    <button class="btn">Sign up</button>
+                    <button class="btn">Sign In</button>
                 </a>
             </div>        
             <div class="nav_content">

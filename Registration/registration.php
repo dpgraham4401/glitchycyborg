@@ -1,13 +1,4 @@
 <?php
-    // $fname = htmlspecialchars($_POST['fname']);
-    // $lname = htmlspecialchars($_POST['fname']);
-    // $uname = htmlspecialchars($_POST['fname']);
-    // $email = htmlspecialchars($_POST['fname']);
-    // $psswd = htmlspecialchars($_POST['fname']);
-
-    // echo $fname;
-    // echo "file written successfully";
-
     require_once 'login.php';
 
     if ($_POST['psswd1'] != $_POST['psswd2'])
@@ -42,14 +33,16 @@
         $stmt = $conn->prepare('INSERT INTO 
             users(first_name, last_name, user_name, email, password) 
             VALUES(?,?,?,?,?)');
-        $stmt->bind_param('sssss', $fname, $lname, $uname, $email, $psswd1);
+        $stmt->bind_param('sssss', $fname, $lname, $uname, $email, $hash);
 
         $fname = get_post($conn, 'fname');
         $lname = get_post($conn, 'lname');
         $uname = get_post($conn, 'uname');
         $email = get_post($conn, 'email');
-        $psswd1 = get_post($conn, 'passwd1');
-        $psswd2 = get_post($conn, 'passwd2');
+        $psswd1 = $_POST['psswd1'];
+        
+        // $psswd1 = get_post($conn, 'passwd1');
+        $hash = password_hash($psswd1, PASSWORD_DEFAULT);
         
         $stmt->execute();
         $stmt->close();

@@ -266,12 +266,33 @@ a:hover {
 }
 
 /* Registration */
+#registration{
+    overflow: auto;
+    padding-top: 30px;
+    display: grid;
+    justify-content: center;
+    min-height: 800px;
+    margin-bottom: 50px;
+}
+
+#goog_title{
+    padding-top: 10px;
+}
+
+.g-signin2{
+    padding-top: 10px;
+}
+
+form{
+    width: 120%;
+}
 fieldset {
-    width: 10%;
+    /* width: 20%; */
     margin-left: auto;
     margin-top: auto;
-    box-shadow: 0px 0px 3px #222222;
+    box-shadow: 0px 0px 4px #131313;
     padding: 2%;
+    border: none;
 }
 
 legend {
