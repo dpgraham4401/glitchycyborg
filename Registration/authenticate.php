@@ -22,8 +22,13 @@
 
              if (password_verify($pw_temp, $row[4]))
              {
-                echo htmlspecialchars("$row[0] $row[1] :
-                Hi $row[0], you are now logged in as '$row[2]'");
+                session_start();
+                ini_set('session.use_only_cookies', 1);
+                ini_set('session.gc_maxlifetime', 60 * 40);
+                $_SESSION['uname'] = $row[2];
+                $conn->close();
+                header("Location: thanks.php");
+                die();
              }
              else die("Invalid username/password combination");
          }

@@ -16,6 +16,13 @@
 	 <title> Glitchy | Cyborg</title>
 </head>
 <body>
+    <?php
+        session_start();
+        ini_set('session.use_only_cookies', 1);
+        ini_set('session.gc_maxlifetime', 60 * 40);
+        if (isset($_SESSION['uname']))
+        $uname = htmlspecialchars($_SESSION['uname']);
+    ?>
     <header id="menu">
     	<!-- leftside of the header -->
         <div id="menu-left">
@@ -29,11 +36,6 @@
         <!-- Navigation (right side of the header) -->
         <div id="menu-right" class="menu-content">
             <div class="nav_content">
-                <a href="../Registration/signup.php">
-                    <button class="btn">Sign In</button>
-                </a>
-            </div>        
-            <div class="nav_content">
                 <script type="text/javascript" src="../Assets/JS/menudrop.js"></script>
                     <button onclick="menudrop()" class="btn" id="dropbtn">Menu</button>
                 <div id="myDropdown" class="dropdown-content">
@@ -42,17 +44,35 @@
                     <a href="../Technical/tech_Specs.php"> Tech Specs </a> 
                     <a href="#Comment"> Leave Feedback</a>
                 </div>
-            </div>  
+            </div>
+            <?php
+                if (isset($uname))
+                    echo <<< _END
+                    <div class="nav_content">
+                        <a href="../Registration/signup.php">
+                            <button class="btn">$uname</button>
+                        </a>
+                    </div>
+                    _END;
+                else
+                echo <<< _END
+                <div class="nav_content">
+                    <a href="../Registration/signup.php">
+                        <button class="btn">Sign In</button>
+                    </a>
+                </div>
+                _END;
+            ?>
         </div>
     </header>
     <div id="container" >
         <div id="main">
             <div id="left_text">
-                <h3 id="thanks"> Thanks for registering! </h3>
-                <p> You can head back to our <a href="http://www.glitchycyb.org"> homepage </a> or... I dunno, do what you want. 
+                <h3 id="thanks"> Thanks for Signing up! </h3>
+                <p>You can head back to our <a href="http://www.glitchycyb.org"> homepage </a> or... I dunno, do what you want. 
                 There's nothing else on the site yet soooo... yeaahhhh. This is awkward.</p>
                 <br>
-                <p>Enventually there'll be something here on how to get started ater signing up </p>
+                <p>Enventually there'll be something here on how to get started ater signing up</p>
             </div>
         </div>
     </div>

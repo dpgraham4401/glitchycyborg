@@ -32,11 +32,6 @@
         <!-- Navigation (right side of the header) -->
         <div id="menu-right" class="menu-content">
             <div class="nav_content">
-                <a href="../Registration/signup.php">
-                    <button class="btn">Sign In</button>
-                </a>
-            </div>        
-            <div class="nav_content">
                 <script type="text/javascript" src="../Assets/JS/menudrop.js"></script>
                     <button onclick="menudrop()" class="btn" id="dropbtn">Menu</button>
                 <div id="myDropdown" class="dropdown-content">
@@ -45,7 +40,12 @@
                     <a href="../Technical/tech_Specs.php"> Tech Specs </a> 
                     <a href="#Comment"> Leave Feedback</a>
                 </div>
-            </div>  
+            </div>
+            <div class="nav_content">
+                <a href="../Registration/signup.php">
+                    <button class="btn">Sign In</button>
+                </a>
+            </div>
         </div>
     </header>
     <div id="container" >

@@ -16,7 +16,14 @@
 	
 	<title> Glitchy | Cyborg</title>
 </head>
-<body>
+    <body>
+    <?php
+        session_start();
+        ini_set('session.use_only_cookies', 1);
+        ini_set('session.gc_maxlifetime', 60 * 40);
+        if (isset($_SESSION['uname']))
+        $uname = htmlspecialchars($_SESSION['uname']);
+    ?>
     <header id="menu">
         <div id="menu-left">
             <div id="menu-icon" class="menu-content">
@@ -26,12 +33,7 @@
                    <h2> Glitchy Cyborg </h2>
             </div>
         </div>
-        <div id="menu-right">
-            <div class="nav_content">
-                <a href="Registration/signup.php">
-                    <button class="btn">Sign In</button>
-                </a>
-            </div>        
+        <div id="menu-right">      
             <div class="nav_content">
                 <script type="text/javascript" src="Assets/JS/menudrop.js"></script>
                     <button onclick="menudrop()" class="btn" id="dropbtn">Menu</button>
@@ -40,9 +42,27 @@
                     <a href="Registration/signup.php"> Sign In </a>
                     <a href="Technical/tech_Specs.php"> Tech Specs </a> 
                     <a href="#Comment"> Leave Feedback</a>
-                    <a href="Test/test.php"> Test</a> 
+                    <!-- <a href="Test/test.php"> Test</a>  -->
                 </div>
-            </div>  
+            </div>
+            <?php
+                if (isset($uname))
+                    echo <<< _END
+                    <div class="nav_content">
+                        <a href="../Registration/signup.php">
+                            <button class="btn">$uname</button>
+                        </a>
+                    </div>
+                    _END;
+                else
+                echo <<< _END
+                <div class="nav_content">
+                    <a href="../Registration/signup.php">
+                        <button class="btn">Sign In</button>
+                    </a>
+                </div>
+                _END;
+            ?>
         </div>
     </header>
     <div id="container">
@@ -63,6 +83,19 @@
                 </div>
                 <div class="right_el">
                     <h2> News </h2>
+                    <?php
+                        $news_dir = 'Assets/News/';
+                        $files =  (scandir($news_dir));
+                        foreach($files as $news)
+                        {
+                            $content = file_get_contents($news_dir . $news);
+                            if ($content) echo <<< _END
+                                $content
+                                <br>
+                                <br>
+                            _END;
+                        }
+                    ?>
                 </div>
             </div>
         </div>

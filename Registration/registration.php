@@ -7,7 +7,7 @@
         <h3>Oops! passwords are not the same</h3>
         <a href="signup.php" > Try again </a>
         
-        _END;
+        _END; 
         die();
     }
 
