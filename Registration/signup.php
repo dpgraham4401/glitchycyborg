@@ -51,7 +51,7 @@
     <div id="container" >
         <div id="registration">
             <div id = "reg_form" class = "registration_form">
-    	        <form action="registration.php" method="POST">
+    	        <form action="registration.php" method="POST" onsubmit="return validate(this)">
     	            <fieldset>
     	        	<legend>Sign up</legend>
                 		<label>First Name:<br />
@@ -107,6 +107,6 @@
         console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
         }
     </script>
-
+<script src="../Assets/JS/auth_check.js"></script>
 </body>
 </html>

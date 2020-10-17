@@ -72,7 +72,7 @@
                 <p>You can head back to our <a href="http://www.glitchycyb.org"> homepage </a> or... I dunno, do what you want. 
                 There's nothing else on the site yet soooo... yeaahhhh. This is awkward.</p>
                 <br>
-                <p>Enventually there'll be something here on how to get started ater signing up</p>
+                <p>Eventually there'll be something here on how to get started after signing up</p>
             </div>
         </div>
     </div>

@@ -80,9 +80,10 @@
                         <input type="text" placeholder="search..." class="search-content">
                         <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
                     </form>
+                    <br>
+                    <h2> News </h2>
                 </div>
                 <div class="right_el">
-                    <h2> News </h2>
                     <?php
                         $news_dir = 'Assets/News/';
                         $files =  (scandir($news_dir));
@@ -90,7 +91,7 @@
                         {
                             $content = file_get_contents($news_dir . $news);
                             if ($content) echo <<< _END
-                                $content
+                                <p>$content</p>
                                 <br>
                                 <br>
                             _END;
