@@ -27,7 +27,7 @@
                 ini_set('session.gc_maxlifetime', 60 * 40);
                 $_SESSION['uname'] = $row[2];
                 $conn->close();
-                header("Location: thanks.php");
+                header("Location: ../User/profile.php");
                 die();
              }
              else die("Invalid username/password combination");

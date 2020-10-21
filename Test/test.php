@@ -14,7 +14,13 @@
 	      content="David Graham" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	
-	<title> Glitchy | Cyborg</title>
+    <title> Glitchy | Cyborg</title>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script> -->
+    <script src="jq_term.js"></script>
+    <link rel="stylesheet" href="./jq_term.css"/>
+
 </head>
 <body>
     <header id="menu">
@@ -50,22 +56,22 @@
             <div id="left_text" class="text_body_left">
                 <h2> Welcome to Glitchy Cyborg </h2>
                 <p>This is a test environment</p>
-                <div id="file_input" class="test">
-                <form id = "registration" action="Scripts/test_file.php" method="POST">
-    	            <fieldset>
-    	        	<legend>Output to file</legend>
-                		<label>First Name:<br />
-    	                	<input type="text" name ="fname"/></label><br />
-    	            	<label>Last Name:<br />
-    	                	<input type="text" name="lname"/></label><br />
-                		<label>Username:<br />
-    	                	<input type="text" name="uname"/></label><br />
-    		            <label>Email:<br />
-    		                <input type="email" name="email" required="required"></label><br />
-    		                <input type="submit" value="submit" />
-    	            </fieldset>
-    	        </form>
-            </div>
+                <script>
+$('body').terminal({
+    cat: function() {
+        this.echo($('<img src="https://placekitten.com/408/287">'));
+    }
+});
+$('body').terminal({
+    hello: function(what) {
+        this.echo('Hello, ' + what +
+                  '. Wellcome to this terminal.');
+    }
+}, {
+    greetings: 'My First Terminal'
+});
+                
+                </script>
             </div>
 
             <div id="right_text" class="text_right_body">

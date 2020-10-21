@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href="Assets/CSS/gc_base.css" type="text/css" rel="stylesheet"/>
+	<link href="../Assets/CSS/gc_base.css" type="text/css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<meta name="description"
@@ -39,8 +39,8 @@
                     <button onclick="menudrop()" class="btn" id="dropbtn">Menu</button>
                 <div id="myDropdown" class="dropdown-content">
                     <a href="http://www.glitchycyb.org"> Home </a>
-                    <a href="Registration/signup.php"> Sign In </a>
-                    <a href="Technical/tech_Specs.php"> Tech Specs </a> 
+                    <a href="../Registration/signup.php"> Sign In </a>
+                    <a href="../Technical/tech_Specs.php"> Tech Specs </a> 
                     <a href="#Comment"> Leave Feedback</a>
                     <!-- <a href="Test/test.php"> Test</a>  -->
                 </div>
@@ -68,35 +68,45 @@
     <div id="container">
         <div id="main">
             <div id="left_text" class="text_body_left">
-                <h2> Welcome to Glitchy Cyborg </h2>
-                <p>Thank you for visiting, Glitchy Cyborg is currently under construction
-                Come back and visit us in a couple months </p>
-                <br>
-                <p>In the meantime, here is an picture of a <a href="/Assets/Pictures/puppy.jpg"> Puppy! </a></p>
-            </div>
-            <div id="right_text" class="text_right_body">
-                <div class="search-container" class="right-el">
-                    <form action="search_site.php">
-                        <input type="text" placeholder="search..." class="search-content">
-                        <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
-                    </form>
-                    <br>
-                    <h2> News </h2>
-                </div>
-                <div class="right_el">
-                    <?php
-                        $news_dir = 'Assets/News/';
-                        $files =  (scandir($news_dir));
-                        foreach($files as $news)
-                        {
-                            $content = file_get_contents($news_dir . $news);
-                            if ($content) echo <<< _END
-                                <p>$content</p>
-                                <br>
-                                <br>
-                            _END;
+                <div id = allocation>
+                    <h3>Gaea Allocation</h3>
+                    <table>
+                        <tr>
+                            <!-- <th rowspan="2" >Gaea</th> -->
+                            <th>Storage</th>
+                            <th>Stoarge Used</th>
+                            <th>SU</th>
+                            <th>SU Used</th>
+                        </tr>
+                        <tr>
+                            <td>5 Gb</td>
+                            <td>0 Gb</td>
+                            <td>2100 SU</td>
+                            <td>0 SU</td>
+                        </tr>
+                    </table>
+                    <style>
+                        table {
+                            width: 500 px;
                         }
-                    ?>
+                        th, td {
+                            padding: 7px 10px 10px 10px;
+                        }
+                        th {
+                            text-transform: uppercase;
+                            letter-spacing: 0.1em;
+                            border-bottom: 2px solid #111111;
+                            border-top: 1px solid #999;
+                            text-align: left;
+                        }
+                        td {
+                            background-color: #efefef;
+                        }
+                        td:hover{
+                            background-color: silver;
+                        }
+
+                    </style>
                 </div>
             </div>
         </div>
