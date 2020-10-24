@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href="../Assets/CSS/gc_base.css" type="text/css" rel="stylesheet"/>
+	<link href="./profile.css" type="text/css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<meta name="description"
@@ -22,7 +22,10 @@
         ini_set('session.use_only_cookies', 1);
         ini_set('session.gc_maxlifetime', 60 * 40);
         if (isset($_SESSION['uname']))
+        $fname = htmlspecialchars($_SESSION['fname']);
+        $lname = htmlspecialchars($_SESSION['lname']);
         $uname = htmlspecialchars($_SESSION['uname']);
+        $email = htmlspecialchars($_SESSION['email']);
     ?>
     <header id="menu">
         <div id="menu-left">
@@ -35,23 +38,26 @@
         </div>
         <div id="menu-right">      
             <div class="nav_content">
-                <script type="text/javascript" src="Assets/JS/menudrop.js"></script>
+                <script type="text/javascript" src="../Assets/JS/menudrop.js"></script>
                     <button onclick="menudrop()" class="btn" id="dropbtn">Menu</button>
                 <div id="myDropdown" class="dropdown-content">
                     <a href="http://www.glitchycyb.org"> Home </a>
-                    <a href="../Registration/signup.php"> Sign In </a>
                     <a href="../Technical/tech_Specs.php"> Tech Specs </a> 
                     <a href="#Comment"> Leave Feedback</a>
-                    <!-- <a href="Test/test.php"> Test</a>  -->
                 </div>
             </div>
             <?php
                 if (isset($uname))
                     echo <<< _END
                     <div class="nav_content">
-                        <a href="../User/profile.php">
-                            <button class="btn">$uname</button>
-                        </a>
+                        <script type="text/javascript" src="Assets/JS/menudrop.js"></script>
+                            <button onclick="profiledrop()" class="btn" id="dropbtn">$uname</button>
+                            <i class="fa fa-caret-down"></i>
+                        <div id="myProfile" class="dropdown-content">
+                            <a href="profile.php"> Profile </a>
+                            <a href="allocation.php"> Allocation </a>
+                            <a href="../Registration/logout.php"> Log out </a>
+                        </div>
                     </div>
                     _END;
                 else
@@ -66,50 +72,81 @@
         </div>
     </header>
     <div id="container">
-        <div id="main">
-            <div id="left_text" class="text_body_left">
-                <div id = allocation>
-                    <h3>Gaea Allocation</h3>
-                    <table>
-                        <tr>
-                            <!-- <th rowspan="2" >Gaea</th> -->
-                            <th>Storage</th>
-                            <th>Stoarge Used</th>
-                            <th>SU</th>
-                            <th>SU Used</th>
-                        </tr>
-                        <tr>
-                            <td>5 Gb</td>
-                            <td>0 Gb</td>
-                            <td>2100 SU</td>
-                            <td>0 SU</td>
-                        </tr>
-                    </table>
-                    <style>
-                        table {
-                            width: 500 px;
-                        }
-                        th, td {
-                            padding: 7px 10px 10px 10px;
-                        }
-                        th {
-                            text-transform: uppercase;
-                            letter-spacing: 0.1em;
-                            border-bottom: 2px solid #111111;
-                            border-top: 1px solid #999;
-                            text-align: left;
-                        }
-                        td {
-                            background-color: #efefef;
-                        }
-                        td:hover{
-                            background-color: silver;
-                        }
-
-                    </style>
+        <main class="page_content">
+            <div class="account_cards">
+                <div class="account_grid">
+                    <section class="profile_card account_sub_col">
+                        <div class="card_title">
+                            <h2>Your Account</h2>
+                        </div>
+                        <section class="user_info sub_card">
+                            <div class="sub_content">
+                                <div class="action_header">
+                                    <span><h3>Personal info</h3></span>
+                                    <button class="action_header_btn">Update username </button>
+                                </div>
+                                <p><?php if (isset($uname))
+                                    echo $uname; ?> </p>
+                                <p><?php if (isset($fname))
+                                    echo $fname; ?> </p>
+                                <p><?php if (isset($lname))
+                                    echo $lname; ?> </p>
+                            </div>
+                        </section>
+                        <section class="contact_info sub_card">
+                            <div class="sub_content">
+                                <div class="action_header">
+                                <h4>Contact Info</h4>
+                                <button class="action_header_btn">Update contact info </button>
+                                </div>
+                                <p><?php if (isset($email))
+                                    echo $email; ?> </p>
+                            </div>
+                        </section>
+                        <section class="psswd_info sub_card">
+                            <div class="sub_content">
+                                <div class="action_header">
+                                <h4>Password</h4>
+                                <button class="action_header_btn">Change password </button>
+                                </div>
+                                <p>•••••••••</p>
+                            </div>
+                        </section>
+                        <section class="logout sub_card">
+                            <div class="sub_content">
+                                <div class="action_header">
+                                <button class="action_header_btn"><h3>Logout</h3></button>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="delete_account sub_card">
+                            <div class="sub_content">
+                                <div class="action_header">
+                                <button class="action_header_btn"><h3>Delete Account</h3></button>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="subscription_card account_sub_col">
+                    <div class="card_title">
+                            <h2>A word on Privacy and Security</h2>
+                        </div>
+                        <section class="message sub_card">
+                            <div class="sub_content">
+                                <p>Hi! <br> First off, we promise we will never give away your personal info,
+                                contact info or anything. I you're using Chrome you're practically giving away your info anyways
+                                but that's a conversation for another day.</p>
+                                <br>
+                                <p> Now, a word on security, we advise you do not use a password on our site that you also 
+                                use on other sites that contain personal or sensitive information. We're working hard to 
+                                protect your info but this site is continually developing, and do not gaurantee anything.
+                                We do require a password with atleast 6 characters, with at least one uppercase, one lowercase and one number</p>
+                            </div>
+                        </section>
+                    </section>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
     <footer id="footer">
         <p>Check out our <a href="https://github.com/dpgraham4401/glitchycyborg">GitHub </a> for updates</p>

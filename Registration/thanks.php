@@ -38,9 +38,10 @@
             <div class="nav_content">
                 <script type="text/javascript" src="../Assets/JS/menudrop.js"></script>
                     <button onclick="menudrop()" class="btn" id="dropbtn">Menu</button>
+                    <i class="fa fa-caret-down"></i>
                 <div id="myDropdown" class="dropdown-content">
                     <a href="http://www.glitchycyb.org"> Home </a>
-                    <a href="../Registration/signup.php"> Sign Up </a>
+                    <!-- <a href="../Registration/signup.php"> Sign Up </a> -->
                     <a href="../Technical/tech_Specs.php"> Tech Specs </a> 
                     <a href="#Comment"> Leave Feedback</a>
                 </div>
@@ -49,9 +50,14 @@
                 if (isset($uname))
                     echo <<< _END
                     <div class="nav_content">
-                        <a href="../Registration/signup.php">
-                            <button class="btn">$uname</button>
-                        </a>
+                        <script type="text/javascript" src="Assets/JS/menudrop.js"></script>
+                            <button onclick="profiledrop()" class="btn" id="dropbtn">$uname</button>
+                            <i class="fa fa-caret-down"></i>
+                        <div id="myProfile" class="dropdown-content">
+                            <a href="../User/profile.php"> Profile </a>
+                            <a href="../User/allocation.php"> Allocation </a>
+                            <a href="../Registration/logout.php"> Log out </a>
+                        </div>
                     </div>
                     _END;
                 else

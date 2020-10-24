@@ -25,7 +25,10 @@
                 session_start();
                 ini_set('session.use_only_cookies', 1);
                 ini_set('session.gc_maxlifetime', 60 * 40);
+                $_SESSION['fname'] = $row[0];
+                $_SESSION['lname'] = $row[1];
                 $_SESSION['uname'] = $row[2];
+                $_SESSION['email'] = $row[3];
                 $conn->close();
                 header("Location: ../User/profile.php");
                 die();

@@ -16,7 +16,7 @@
 	
 	<title> Glitchy | Cyborg</title>
 </head>
-<body>
+    <body>
     <?php
         session_start();
         ini_set('session.use_only_cookies', 1);
@@ -33,14 +33,16 @@
                    <h2> Glitchy Cyborg </h2>
             </div>
         </div>
-        <div id="menu-right" class="menu-content">      
+        <div id="menu-right">      
             <div class="nav_content">
                 <script type="text/javascript" src="../Assets/JS/menudrop.js"></script>
                     <button onclick="menudrop()" class="btn" id="dropbtn">Menu</button>
                 <div id="myDropdown" class="dropdown-content">
                     <a href="http://www.glitchycyb.org"> Home </a>
+                    <!-- <a href="../Registration/signup.php"> Sign In </a> -->
                     <a href="../Technical/tech_Specs.php"> Tech Specs </a> 
                     <a href="#Comment"> Leave Feedback</a>
+                    <!-- <a href="Test/test.php"> Test</a>  -->
                 </div>
             </div>
             <?php
@@ -51,8 +53,8 @@
                             <button onclick="profiledrop()" class="btn" id="dropbtn">$uname</button>
                             <i class="fa fa-caret-down"></i>
                         <div id="myProfile" class="dropdown-content">
-                            <a href="../User/profile.php"> Profile </a>
-                            <a href="../User/allocation.php"> Allocation </a>
+                            <a href="profile.php"> Profile </a>
+                            <a href="allocation.php"> Allocation </a>
                             <a href="../Registration/logout.php"> Log out </a>
                         </div>
                     </div>
@@ -71,16 +73,46 @@
     <div id="container">
         <div id="main">
             <div id="left_text" class="text_body_left">
-                <h2> Gaea Technical Specifications</h2>
-            </div>
-            <div id="right_text" class="text_right_body">
-                <div class="search-container">
-                    <form action="search_site.php">
-                        <input type="text" placeholder="search..." class="search-content">
-                        <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
-                    </form>
+                <div id = allocation>
+                    <h3>Gaea Allocation</h3>
+                    <table>
+                        <tr>
+                            <!-- <th rowspan="2" >Gaea</th> -->
+                            <th>Storage</th>
+                            <th>Stoarge Used</th>
+                            <th>SU</th>
+                            <th>SU Used</th>
+                        </tr>
+                        <tr>
+                            <td>5 Gb</td>
+                            <td>0 Gb</td>
+                            <td>2100 SU</td>
+                            <td>0 SU</td>
+                        </tr>
+                    </table>
+                    <style>
+                        table {
+                            width: 500 px;
+                        }
+                        th, td {
+                            padding: 7px 10px 10px 10px;
+                        }
+                        th {
+                            text-transform: uppercase;
+                            letter-spacing: 0.1em;
+                            border-bottom: 2px solid #111111;
+                            border-top: 1px solid #999;
+                            text-align: left;
+                        }
+                        td {
+                            background-color: #efefef;
+                        }
+                        td:hover{
+                            background-color: silver;
+                        }
+
+                    </style>
                 </div>
-                <h2> News </h2>
             </div>
         </div>
     </div>
