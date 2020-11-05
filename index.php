@@ -33,7 +33,7 @@
                    <h2> Glitchy Cyborg </h2>
             </div>
         </div>
-        <div id="menu-right">      
+        <div id="menu-right">
             <div class="nav_content">
                 <script type="text/javascript" src="Assets/JS/menudrop.js"></script>
                     <button onclick="menudrop()" class="btn" id="dropbtn">Menu</button>
@@ -70,40 +70,88 @@
         </div>
     </header>
     <div id="container">
-        <div id="main">
-            <div id="left_text" class="text_body_left">
-                <h2> Welcome to Glitchy Cyborg </h2>
-                <p>Thank you for visiting, Glitchy Cyborg is currently under construction
-                Come back and visit us in a couple months </p>
-                <br>
-                <p>In the meantime, here is an picture of a <a href="/Assets/Pictures/puppy.jpg"> Puppy! </a></p>
-            </div>
-            <div id="right_text" class="text_right_body">
-                <div class="search-container" class="right-el">
-                    <form action="search_site.php">
-                        <input type="text" placeholder="search..." class="search-content">
-                        <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
-                    </form>
-                    <br>
-                    <h2> News </h2>
+        <main class="page_content">
+            <div class="main_content">
+                <div class="welcome main_grid">
+                    <section class="welcome main_grid_row">
+                        <div class="main_row_sub">
+                            <h2> Welcome to Glitchy Cyborg </h2>
+                            <p>Thank you for visiting, Glitchy Cyborg is currently under construction
+                            Come back and visit us in a couple months </p>
+                            <br>
+                            <p>In the meantime, here is an picture of a <a href="/Assets/Pictures/puppy.jpg"> Puppy! </a></p>
+                        </div>
+                    </section>
+                    <section class="main_grid_row">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+                            mollit anim id est laborum.</p>
+                    </section>
+                    <section class="main_grid_row">
+                        <!-- <div class="main_row_sub"> -->
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+                            mollit anim id est laborum.</p>
+                        <!-- </div> -->
+                    </section>
+                    <section class="main_grid_row">
+                        <div class="main_row_sub">
+                            <div class="sub_content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+                                mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+                        <div class="main_row_sub">
+                            <div class="sub_content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+                                mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-                <div class="right_el">
-                    <?php
-                        $news_dir = 'Assets/News/';
-                        $files =  (scandir($news_dir));
-                        foreach($files as $news)
-                        {
-                            $content = file_get_contents($news_dir . $news);
-                            if ($content) echo <<< _END
-                                <p>$content</p>
-                                <br>
-                                <br>
-                            _END;
-                        }
-                    ?>
+            </div>
+            <div class="right_col">
+                <div class="col_content_grid">
+                    <div class="search_container right_el">
+                        <form action="search_site.php">
+                            <input type="text" placeholder="search..." class="search-content">
+                            <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+                        </form>
+                        <br>
+                        <h2> News </h2>
+                    </div>
+                    <div class="right_el">
+                        <?php
+                            $news_dir = 'Assets/News/';
+                            $files =  (scandir($news_dir));
+                            foreach($files as $news)
+                            {
+                                $content = file_get_contents($news_dir . $news);
+                                if ($content) echo <<< _END
+                                    <p>$content</p>
+                                    <br>
+                                    <br>
+                                _END;
+                            }
+                        ?>
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
     <footer id="footer">
         <p>Check out our <a href="https://github.com/dpgraham4401/glitchycyborg">GitHub </a> for updates</p>

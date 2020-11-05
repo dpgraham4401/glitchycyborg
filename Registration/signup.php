@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href="../Assets/CSS/gc_base.css" type="text/css" rel="stylesheet" />
+	<link href="../Assets/CSS/cellformat.css" type="text/css" rel="stylesheet" />
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<meta name="description"
 	      content="single board computer clusters" />
@@ -68,47 +68,123 @@
         </div>
     </header>
     <div id="container" >
-        <div id="registration">
-            <div id = "reg_form" class = "registration_form">
-    	        <form action="registration.php" method="POST" onsubmit="return validate(this)">
-    	            <fieldset>
-    	        	<legend>Sign up</legend>
-                		<label>First Name:<br />
-    	                	<input type="text" name ="fname"/></label><br />
-    	            	<label>Last Name:<br />
-    	                	<input type="text" name="lname"/></label><br />
-                		<label>Username:<br />
-    	                	<input type="text" name="uname"/></label><br />
-    		            <label>Email:<br />
-    		                <input type="email" name="email" required="required"></label><br />
-    		            <label>Password:<br />
-    		                <input type="password" name="psswd1" required="required"/></label><br />
-    		            <label>Confirm Password:<br />
-    		                <input type="password" name="psswd2" required="required"/></label><br />
-    		                <input type="submit" value="submit" />
-                    </fieldset>
-                </form>
+        <main class="page_content">
+            <div class="cells">
+                <div class="cell_grid">
+                    <section class="cell_row">
+                        <section class = "cell_sub_col">
+                            <div class="card_title">
+                                <h2>Sign up</h2>
+                            </div>
+                            <section class="sub_cell">
+                                <form action="registration.php" method="POST" onsubmit="return validate(this)">
+                                    <div class="fieldset">
+                                        <div class="input_sect">
+                                            <div class="input_field">
+                                                <label>
+                                                    <input id="fname" type="text" name ="fname" class="input_text"/>
+                                                    <label for="fname" class="input_label">First name</label>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="input_sect">
+                                            <div class="input_field">
+                                                <label>
+                                                    <input id="lname" type="text" name ="lname" class="input_text"/>
+                                                    <label for="lname" class="input_label">Last name</label>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="input_sect">
+                                            <label>Last Name:<br />
+                                            <input type="text" name="lname"/></label><br />
+                                        </div> -->
+                                        <div class="input_sect">
+                                            <div class="input_field">
+                                                <label>
+                                                    <input id="uname" type="text" name ="uname" class="input_text"/>
+                                                    <label for="uname" class="input_label">Username</label>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="input_sect">
+                                            <label>Username:<br />
+                                            <input type="text" name="uname"/></label><br />
+                                        </div> -->
+                                        <div class="input_sect">
+                                            <div class="input_field">
+                                                <label>
+                                                    <input id="email" type="email" name ="email" required="required" class="input_text"/>
+                                                    <label for="email" class="input_label">Email Address</label>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="input_sect">
+                                            <label>Email:<br />
+                                            <input type="email" name="email" required="required">
+                                        </label><br />
+                                        </div> -->
+                                        <div class="input_sect">
+                                            <div class="input_field">
+                                                <label>
+                                                    <input id="psswd1" type="password" name ="psswd1" required="required" class="input_text"/>
+                                                    <label for="psswd1" class="input_label">Password</label>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="input_sect">
+                                            <label>Password:<br />
+                                            <input type="password" name="psswd1" required="required"/></label><br />
+                                        </div> -->
+                                        <div class="input_sect">
+                                            <div class="input_field">
+                                                <label>
+                                                    <input id="psswd2" type="password" name ="psswd2" required="required" class="input_text"/>
+                                                    <label for="psswd2" class="input_label">Verify Password</label>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="input_sect">
+                                            <label>Confirm Password:<br />
+                                            <input type="password" name="psswd2" required="required"/></label><br />
+                                        </div> -->
+                                        <input type="submit" value="submit" />
+                                    </div>
+                                </form>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="cell_row">
+                        <section id = "login_form" class = "cell_sub_col">
+                            <section class="sub_cell">
+                                <section class="sub_content">
+                                    <form action="authenticate.php" method="POST">
+                                        <fieldset>
+                                            <label>Username:<br />
+                                                <input type="text" name ="uname"/></label><br />
+                                            <label>Password:<br />
+                                                <input type="password" name="psswd"/></label><br />
+                                                <input type="submit" value="submit" />
+                                        </fieldset>
+                                    </form>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="cell_row">
+                        <section id = "google_form" class = "cell_sub_col">
+                            <section class="sub_cell">
+                                <h4 id="goog_title"> Currently signing in with google works <br> but your usename will not be logged </h4>
+                                <fieldset>
+                                    <div class="g-signin2" data-onsuccess="onSignIn" ></div>
+                                </fieldset>
+                            </section>
+                        </section>
+                    </section>
+                </div>
             </div>
-            <div id = "login_form" class = "registration_form">
-                <form action="authenticate.php" method="POST">
-    	            <fieldset>
-    	        	<legend>Login</legend>
-                		<label>Username:<br />
-    	                	<input type="text" name ="uname"/></label><br />
-    	            	<label>Password:<br />
-    	                	<input type="password" name="psswd"/></label><br />
-    		                <input type="submit" value="submit" />
-                    </fieldset>
-                </form>
-            </div>
-            <div id = "google_form" class = "registration_form">
-                <h4 id="goog_title"> Currently signing in with google works <br> but your usename will not be logged </h4>
-                <fieldset>
-                    <legend> Login With Google </legend>
-                    <div class="g-signin2" data-onsuccess="onSignIn" ></div>
-                </fieldset>
-            </div>
-        </div>
+
+        </main>
     </div>
     <footer id="footer">
         <p>Check out our <a href="https://github.com/dpgraham4401/glitchycyborg">GitHub </a> for updates</p>
