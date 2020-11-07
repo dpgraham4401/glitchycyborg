@@ -56,7 +56,7 @@
                         <div id="myProfile" class="dropdown-content">
                             <a href="../User/profile.php"> Profile </a>
                             <a href="../User/allocation.php"> Allocation </a>
-                            <a href="../Registration/logout.php"> Log out </a>
+                            <a href="../Registration/endsession.php"> Log out </a>
                         </div>
                     </div>
                     _END;

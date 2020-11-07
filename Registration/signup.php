@@ -95,10 +95,6 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <!-- <div class="input_sect">
-                                            <label>Last Name:<br />
-                                            <input type="text" name="lname"/></label><br />
-                                        </div> -->
                                         <div class="input_sect">
                                             <div class="input_field">
                                                 <label>
@@ -107,10 +103,6 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <!-- <div class="input_sect">
-                                            <label>Username:<br />
-                                            <input type="text" name="uname"/></label><br />
-                                        </div> -->
                                         <div class="input_sect">
                                             <div class="input_field">
                                                 <label>
@@ -119,11 +111,6 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <!-- <div class="input_sect">
-                                            <label>Email:<br />
-                                            <input type="email" name="email" required="required">
-                                        </label><br />
-                                        </div> -->
                                         <div class="input_sect">
                                             <div class="input_field">
                                                 <label>
@@ -132,10 +119,6 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <!-- <div class="input_sect">
-                                            <label>Password:<br />
-                                            <input type="password" name="psswd1" required="required"/></label><br />
-                                        </div> -->
                                         <div class="input_sect">
                                             <div class="input_field">
                                                 <label>
@@ -144,10 +127,6 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <!-- <div class="input_sect">
-                                            <label>Confirm Password:<br />
-                                            <input type="password" name="psswd2" required="required"/></label><br />
-                                        </div> -->
                                         <input type="submit" value="submit" />
                                     </div>
                                 </form>
@@ -156,28 +135,47 @@
                     </section>
                     <section class="cell_row">
                         <section id = "login_form" class = "cell_sub_col">
+                            <div class="card_title">
+                                <h2>Login</h2>
+                            </div>
                             <section class="sub_cell">
-                                <section class="sub_content">
-                                    <form action="authenticate.php" method="POST">
-                                        <fieldset>
-                                            <label>Username:<br />
-                                                <input type="text" name ="uname"/></label><br />
-                                            <label>Password:<br />
-                                                <input type="password" name="psswd"/></label><br />
-                                                <input type="submit" value="submit" />
-                                        </fieldset>
-                                    </form>
+                                <form action="authenticate.php" method="POST">
+                                    <div class="fieldset">
+                                        <div class="input_sect">
+                                            <div class="input_field">
+                                                <label>
+                                                    <input id="uname" type="text" name ="uname" class="input_text"/>
+                                                    <label for="uname" class="input_label">Username</label>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="input_sect">
+                                            <div class="input_field">
+                                                <label>
+                                                    <input id="psswd" type="password" name ="psswd" required="required" class="input_text"/>
+                                                    <label for="psswd" class="input_label">Password</label>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <input type="submit" value="submit" />
+                                    </div>
                                 </section>
                             </section>
                         </section>
                     </section>
                     <section class="cell_row">
                         <section id = "google_form" class = "cell_sub_col">
+                            <div class="card_title">
+                                <h2>Login with Google</h2>
+                            </div>
                             <section class="sub_cell">
-                                <h4 id="goog_title"> Currently signing in with google works <br> but your usename will not be logged </h4>
-                                <fieldset>
-                                    <div class="g-signin2" data-onsuccess="onSignIn" ></div>
-                                </fieldset>
+                                <div class="sub_content">
+                                    <!-- <h4 id="goog_title"> Currently signing in with google works <br> but your usename will not be logged </h4> -->
+                                    <p>Currently signing in with google connects to their API but no infomation is logged</p>
+                                    <fieldset>
+                                        <div class="g-signin2" data-onsuccess="onSignIn" ></div>
+                                    </fieldset>
+                                </div>
                             </section>
                         </section>
                     </section>

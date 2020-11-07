@@ -204,6 +204,10 @@ main {
     
 }
 
+.g-signin2{
+    background-color: gainsboro;
+}
+
 .sub_content{
     width: 100%;
     font-stretch: normal;
