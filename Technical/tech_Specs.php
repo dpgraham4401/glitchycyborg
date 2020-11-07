@@ -24,59 +24,64 @@
         if (isset($_SESSION['uname']))
         $uname = htmlspecialchars($_SESSION['uname']);
     ?>
-    <header id="menu">
-        <div id="menu-left">
-            <div id="menu-icon" class="menu-content">
-                 <img src="../Assets/Pictures/icon3_60x54.png" alt="icon"/>
-            </div>
-            <div id="menu-title" class="menu-content">
-                   <h2> Glitchy Cyborg </h2>
-            </div>
-        </div>
-        <div id="menu-right" class="menu-content">      
-            <div class="nav_content">
-                <script type="text/javascript" src="../Assets/JS/menudrop.js"></script>
-                    <button onclick="menudrop()" class="btn" id="dropbtn">Menu</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="http://www.glitchycyb.org"> Home </a>
-                    <a href="../Technical/tech_Specs.php"> Tech Specs </a> 
-                    <a href="#Comment"> Leave Feedback</a>
+    <header class="top_bar">
+        <div class="menu_wrapper">
+            <div class="menu_sect">
+                <div class="menu_icon menu_content">
+                    <img src="../Assets/Pictures/icon3_60x54.png" alt="icon"/>
+                </div>
+                <div class="menu_title menu_content">
+                    <h2> Glitchy Cyborg </h2>
                 </div>
             </div>
-            <?php
-                if (isset($uname))
-                    echo <<< _END
-                    <div class="nav_content">
-                        <script type="text/javascript" src="Assets/JS/menudrop.js"></script>
-                            <button onclick="profiledrop()" class="btn" id="dropbtn">$uname</button>
-                            <i class="fa fa-caret-down"></i>
-                        <div id="myProfile" class="dropdown-content">
-                            <a href="../User/profile.php"> Profile </a>
-                            <a href="../User/allocation.php"> Allocation </a>
-                            <a href="../Registration/endsession.php"> Log out </a>
+            <div class="menu_sect">
+                <div class="menu_content menu_btn">
+                    <button onclick="menudrop()" class="btn" id="dropbtn">Menu <i class="fa fa-caret-down"></i></button>
+                </div>
+                <div class="menu_content">
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="http://www.glitchycyb.org"> Home </a>
+                        <a href="tech_Specs.php"> Tech Specs </a> 
+                        <a href="#Comment"> Leave Feedback</a>
+                    </div>
+                </div>
+                <?php
+                    if (isset($uname))
+                        echo <<< _END
+                        <div class="menu_content menu_btn">
+                            <button onclick="profiledrop()" class="btn" id="dropbtn">$uname <i class="fa fa-caret-down"></i></button>
                         </div>
+                        <div class="menu_content">
+                            <div id="myProfile" class="dropdown-content">
+                                <a href="../User/profile.php"> Profile </a>
+                                <a href="../User/allocation.php"> Allocation </a>
+                                <a href="../Registration/endsession.php"> Log out </a>
+                            </div>
+                        </div>
+                        _END;
+                    else
+                    echo <<< _END
+                    <div class="menu_content menu_btn">
+                        <a href="../Registration/signup.php">
+                            <button class="btn">Sign In</button>
+                        </a>
                     </div>
                     _END;
-                else
-                echo <<< _END
-                <div class="nav_content">
-                    <a href="../Registration/signup.php">
-                        <button class="btn">Sign In</button>
-                    </a>
-                </div>
-                _END;
-            ?>
+                ?>
+            </div>
         </div>
     </header>
     <div id="container">
         <main class="page_content">
             <div class="main_content">
-                <div class="welcome main_grid">
-                    <section class="welcome main_grid_row">
+                <div class=" main_grid">
+                    <section class=" main_grid_row">
                         <div class="main_row_sub">
-                            <h2> Welcome to Glitchy Cyborg </h2>
-                            <p>Thank you for visiting, Glitchy Cyborg is currently under construction
-                            Come back and visit us in a couple months </p>
+                            <div class="main_title">
+                                <h2>Technical Specification </h2>
+                            </div>
+                            <p>When closer to completion, this page will contain tech specs for 
+                            the Arm cluster available to registered users </p>
                             <br>
                             <p>In the meantime, here is an picture of a <a href="/Assets/Pictures/puppy.jpg"> Puppy! </a></p>
                         </div>
@@ -152,6 +157,7 @@
             </div>
         </main>
     </div>
+    <script type="text/javascript" src="../Assets/JS/menudrop.js"></script>
     <footer id="footer">
         <p>Check out our <a href="https://github.com/dpgraham4401/glitchycyborg">GitHub </a> for updates</p>
         <?php

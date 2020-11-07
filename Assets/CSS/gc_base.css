@@ -10,67 +10,50 @@ html, body {
     height: 100%;
 }
 
-h1, h2, h3 {
-    padding-bottom: 10px;
-}
-
-#menu {
+.top_bar {
+    position: fixed;
     top: 0%;
     left: 0%;
     width: 100%;
     min-height: 40px;
-    position: fixed;
-    display: flex;
-    align-content: center;
     z-index: 1;
-    background-color: Gainsboro;
+    background-color: lightsteelblue;
     background-image: linear-gradient(LightSteelBlue, #93aed2);
     box-shadow: 0px 0px 5px #222222;
+}
+
+.menu_wrapper{
+    box-sizing: border-box;
+    display: flex;
     justify-content: space-between;
 }
 
-#menu-right {
-    text-align: right;
-    margin-right: 5%;
+.menu_sect{
+    display: flex;
+    flex-flow: row nowrap;
+    box-sizing: border-box;
+    padding: 0px 8px;
+    align-items: center;
 }
 
-.menu-content {
-    display: inline-block;
-    text-align: left;
-    height: 100%;
-    vertical-align: bottom;
-}
-
-.menu-content img {
-    flex-shrink: 0;
-    height: 100%;
-    width: 100%;
-}
-
-#menu-right {
-    justify-content: space-between;
-}
-
-.nav_content {
-  /* position: relative; */
-  display: inline-block;
-  /* align-content: center; */
+.menu_content {
+    padding-right: 8px;
 }
 
 .btn {
-  transition-duration: .4s;
+  transition-duration: .2s;
   font-size: 16px;
   border: none;
-  outline: none;
+  padding: 0px 8px;
+  border-radius: 16px;
   font-weight: bold;
-  padding: 20px 10px;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
   }
 
 .btn:hover {
-      color: Gainsboro;
+      background-color: silver;
   }
   
 .dropdown-content {
@@ -83,7 +66,7 @@ h1, h2, h3 {
   }
   
 .dropdown-content a {
-    padding: 12px 16px;
+    padding: 12px 32px;
     text-decoration: none;
     display: block;
   }
@@ -129,10 +112,10 @@ main {
 
 .main_content {
     overflow: auto;
-    padding-top: 40px;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 90px;
+    padding-top: 32px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 64px;
 }
 
 .main_grid{
@@ -145,17 +128,22 @@ main {
     display: grid;
     align-content: start;
     box-sizing: border-box;
-    grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) );;
+    grid-template-columns: repeat( auto-fit, minmax(10px, 1fr) );;
     gap: 32px;
 }
 
 .main_row_sub{
     box-sizing: border-box;
+    display: grid;
+}
+
+.main_title{
+    padding-bottom: 16px;
 }
 
 .sub_content{
     width: 100%;
-    padding: 16px;
+    display: grid;
 }
 
 .right_col {
@@ -163,6 +151,7 @@ main {
     background-color: Gainsboro;
     overflow: auto;
     text-align: center;
+    padding: 0px 8px;
 }
 
 .col_content_grid{
@@ -256,6 +245,11 @@ main {
         height: 5%;
     }
 
+    .sub_content{
+        grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) );;
+
+    }
+
     main {
         min-height: 1200px;
     }
@@ -275,46 +269,6 @@ main {
         box-shadow: 0px 0px 5px #222222;
         overflow: auto;
         min-height: 1400px;
-        padding-top: 10px;
     }
 
 }
-
-/* Registration */
-#registration{
-    overflow: auto;
-    padding-top: 30px;
-    display: grid;
-    justify-content: center;
-    min-height: 800px;
-    margin-bottom: 50px;
-}
-
-#goog_title{
-    padding-top: 10px;
-}
-
-.g-signin2{
-    padding-top: 10px;
-}
-
-form{
-    width: 120%;
-}
-fieldset {
-    /* width: 20%; */
-    margin-left: auto;
-    margin-top: auto;
-    box-shadow: 0px 0px 4px #131313;
-    padding: 2%;
-    border: none;
-}
-
-legend {
-    background-color: Gainsboro;
-    border: 1px solid Gray;
-    border-radius: 10px;
-    padding: 10px 20px;
-    text-align: left;
-}
-

@@ -10,58 +10,46 @@ html, body {
     height: 100%;
 }
 
-/* h1, h2, h3 {
-    padding-bottom: 10px;
-} */
-
-#menu {
+.top_bar {
+    position: fixed;
     top: 0%;
     left: 0%;
     width: 100%;
     min-height: 40px;
-    position: fixed;
-    display: flex;
-    align-content: center;
     z-index: 1;
-    background-color: Gainsboro;
+    background-color: lightsteelblue;
     background-image: linear-gradient(LightSteelBlue, #93aed2);
     box-shadow: 0px 0px 5px #222222;
-    height: 5%;
+}
+
+.menu_wrapper{
+    box-sizing: border-box;
+    display: flex;
     justify-content: space-between;
 }
 
-#menu-right {
-    text-align: right;
-    margin-right: 5%;
+.menu_sect{
+    display: flex;
+    flex-flow: row nowrap;
+    box-sizing: border-box;
+    padding: 0px 8px;
+    align-items: center;
 }
 
-.menu-content {
-    display: inline-block;
-    text-align: left;
-    height: 100%;
-    vertical-align: middle;
+.menu_content {
+    padding-right: 8px;
 }
 
-.menu-content img {
-    flex-shrink: 0;
-    height: 100%;
-    width: 100%;
-}
-
-.nav_content {
-  display: inline-block;
-}
-
-/* menu Dropdown Button */
 .btn {
-  transition-duration: .4s;
-  font-size: 18px;
+  transition-duration: .2s;
+  font-size: 16px;
   border: none;
-  outline: none;
+  padding: 0px 8px;
+  border-radius: 16px;
   font-weight: bold;
-  padding: 20px 10px;
   background-color: inherit;
   font-family: inherit;
+  margin: 0;
   }
 
 .btn:hover {
