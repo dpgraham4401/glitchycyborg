@@ -62,9 +62,47 @@
                     else
                     echo <<< _END
                     <div class="menu_content menu_btn">
-                        <a href="../Registration/signup.php">
-                            <button class="btn">Sign In</button>
-                        </a>
+                        <button id="modal-btn" class="btn">Sign in</button>
+                        <div id="sign-in-modal" class="modal">
+                        <div class="modal_content">
+                            <div class="modal_header">
+                                <span class="close">&times;</span>
+                                <h2>Log in </h2>
+                            </div>
+                            <div class="modal_body">
+                            <section class="sub_cell">
+                                <form action="../Registration/authenticate.php" method="POST">
+                                    <div class="fieldset">
+                                        <div class="input_sect">
+                                            <div class="input_field">
+                                                <label>
+                                                    <input id="uname" type="text" name ="uname" class="input_text"/>
+                                                    <label for="uname" class="input_label">Username</label>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="input_sect">
+                                            <div class="input_field">
+                                                <label>
+                                                    <input id="psswd" type="password" name ="psswd" required="required" class="input_text"/>
+                                                    <label for="psswd" class="input_label">Password</label>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <input type="submit" value="submit" />
+                                    </div>
+                                </form>
+                            </section>
+                            </div>
+                            <div class="modal_footer">
+                                <div class="menu_content menu_btn">
+                                    <a href="../Registration/signup.php">
+                                    <button class="btn">Or Sign up</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                     _END;
                 ?>
@@ -157,7 +195,7 @@
             </div>
         </main>
     </div>
-    <script type="text/javascript" src="../Assets/JS/menudrop.js"></script>
+    <script type="text/javascript" src="../Assets/JS/menufunc.js"></script>
     <footer id="footer">
         <p>Check out our <a href="https://github.com/dpgraham4401/glitchycyborg">GitHub </a> for updates</p>
         <?php

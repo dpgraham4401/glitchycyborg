@@ -50,16 +50,54 @@
                             <div id="myProfile" class="dropdown-content">
                                 <a href="User/profile.php"> Profile </a>
                                 <a href="User/allocation.php"> Allocation </a>
-                                <a href="./Registration/endsession.php"> Log out </a>
+                                <a href="../Registration/endsession.php"> Log out </a>
                             </div>
                         </div>
                         _END;
                     else
                     echo <<< _END
                     <div class="menu_content menu_btn">
-                        <a href="../Registration/signup.php">
-                            <button class="btn">Sign In</button>
-                        </a>
+                        <button id="modal-btn" class="btn">Sign in</button>
+                        <div id="sign-in-modal" class="modal">
+                        <div class="modal_content">
+                            <div class="modal_header">
+                                <span class="close">&times;</span>
+                                <h2>Log in </h2>
+                            </div>
+                            <div class="modal_body">
+                            <section class="sub_cell">
+                                <form action="../Registration/authenticate.php" method="POST">
+                                    <div class="fieldset">
+                                        <div class="input_sect">
+                                            <div class="input_field">
+                                                <label>
+                                                    <input id="uname" type="text" name ="uname" class="input_text"/>
+                                                    <label for="uname" class="input_label">Username</label>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="input_sect">
+                                            <div class="input_field">
+                                                <label>
+                                                    <input id="psswd" type="password" name ="psswd" required="required" class="input_text"/>
+                                                    <label for="psswd" class="input_label">Password</label>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <input type="submit" value="submit" />
+                                    </div>
+                                </form>
+                            </section>
+                            </div>
+                            <div class="modal_footer">
+                                <div class="menu_content menu_btn">
+                                    <a href="../Registration/signup.php">
+                                    <button class="btn">Or Sign up</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                     _END;
                 ?>
@@ -132,7 +170,7 @@
                             </section>
                         </section>
                     </section>
-                    <section class="cell_row">
+                    <!-- <section class="cell_row">
                         <section id = "login_form" class = "cell_sub_col">
                             <div class="card_title">
                                 <h2>Login</h2>
@@ -158,10 +196,10 @@
                                         </div>
                                         <input type="submit" value="submit" />
                                     </div>
-                                </section>
+                                </form>
                             </section>
                         </section>
-                    </section>
+                    </section> -->
                     <section class="cell_row">
                         <section id = "google_form" class = "cell_sub_col">
                             <div class="card_title">
@@ -182,7 +220,7 @@
             </div>
         </main>
     </div>
-    <script type="text/javascript" src="../Assets/JS/menudrop.js"></script>
+    <script type="text/javascript" src="../Assets/JS/menufunc.js"></script>
     <footer id="footer">
         <p>Check out our <a href="https://github.com/dpgraham4401/glitchycyborg">GitHub </a> for updates</p>
         <?php

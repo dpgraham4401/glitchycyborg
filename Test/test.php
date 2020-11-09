@@ -16,81 +16,332 @@
 	
     <title> Glitchy | Cyborg</title>
     
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <!-- <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script> -->
-    <script src="jq_term.js"></script>
-    <link rel="stylesheet" href="./jq_term.css"/>
+    <style>
 
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal_content {
+    border-radius: 20px;
+    position: relative;
+    background-color: #fff;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal_header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 8px 16px;
+    background-color: lightsteelblue;
+    color: white;
+}
+
+.modal_body {
+    padding: 16px 16px;
+    border-radius: 10px;
+}
+
+.modal_footer {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 8px 16px;
+    background-color: lightsteelblue;
+    color: white;
+}
+</style>
 </head>
-<body>
-    <header id="menu">
-        <div id="menu-left">
-            <div id="menu-icon" class="menu-content">
-                 <img src="../Assets/Pictures/icon3_60x54.png" alt="icon"/>
-            </div>
-            <div id="menu-title" class="menu-content">
-                   <h2> Glitchy Cyborg </h2>
-            </div>
-        </div>
-        <div id="menu-right">
-            <div class="nav_content">
-                <a href="registration.php">
-                    <button class="btn">Sign up</button>
-                </a>
-            </div>        
-            <div class="nav_content">
-                <script type="text/javascript" src="../Assets/JS/menudrop.js"></script>
-                    <button onclick="menudrop()" class="btn" id="dropbtn">Menu</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="http://www.glitchycyb.org"> Home </a>
-                    <a href="../Registration/signup.php"> Sign Up </a>
-                    <a href="../Technical/ech_Specs.php"> Tech Specs </a> 
-                    <a href="#Comment"> Leave Feedback</a>
-                    <a href="../Test/test.php"> Test</a> 
+    <body>
+    <?php
+        session_start();
+        ini_set('session.use_only_cookies', 1);
+        ini_set('session.gc_maxlifetime', 60 * 40);
+        if (isset($_SESSION['uname']))
+        $uname = htmlspecialchars($_SESSION['uname']);
+    ?>
+    <header class="top_bar">
+        <div class="menu_wrapper">
+            <div class="menu_sect">
+                <div class="menu_icon menu_content">
+                    <img src="../Assets/Pictures/icon3_60x54.png" alt="icon"/>
                 </div>
-            </div>  
+                <div class="menu_title menu_content">
+                    <h2> Glitchy Cyborg </h2>
+                </div>
+            </div>
+            <div class="menu_sect">
+                <div class="menu_content menu_btn">
+                    <button onclick="menudrop()" class="btn" id="dropbtn">Menu <i class="fa fa-caret-down"></i></button>
+                </div>
+                <div class="menu_content">
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="http://www.glitchycyb.org"> Home </a>
+                        <a href="../Technical/tech_Specs.php"> Tech Specs </a> 
+                        <a href="#Comment"> Leave Feedback</a>
+                    </div>
+                </div>
+                <?php
+                    if (isset($uname))
+                        echo <<< _END
+                        <div class="menu_content menu_btn">
+                            <button onclick="profiledrop()" class="btn" id="dropbtn">$uname <i class="fa fa-caret-down"></i></button>
+                        </div>
+                        <div class="menu_content">
+                            <div id="myProfile" class="dropdown-content">
+                                <a href="../User/profile.php"> Profile </a>
+                                <a href="../User/allocation.php"> Allocation </a>
+                                <a href="../Registration/endsession.php"> Log out </a>
+                            </div>
+                        </div>
+                        _END;
+                    else
+                    echo <<< _END
+                    <div class="menu_content menu_btn">
+                        <button id="modal-btn" class="btn">Sign in</button>
+                        <div id="sign-in-modal" class="modal">
+                        <div class="modal_content">
+                            <div class="modal_header">
+                                <span class="close">&times;</span>
+                                <h2>Log in </h2>
+                            </div>
+                            <div class="modal_body">
+                            <section class="sub_cell">
+                                <form action="../Registration/authenticate.php" method="POST">
+                                    <div class="fieldset">
+                                        <div class="input_sect">
+                                            <div class="input_field">
+                                                <label>
+                                                    <input id="uname" type="text" name ="uname" class="input_text"/>
+                                                    <label for="uname" class="input_label">Username</label>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="input_sect">
+                                            <div class="input_field">
+                                                <label>
+                                                    <input id="psswd" type="password" name ="psswd" required="required" class="input_text"/>
+                                                    <label for="psswd" class="input_label">Password</label>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <input type="submit" value="submit" />
+                                    </div>
+                                </form>
+                            </section>
+                            </div>
+                            <div class="modal_footer">
+                                <div class="menu_content menu_btn">
+                                    <a href="../Registration/signup.php">
+                                    <button class="btn">Or Sign up</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    _END;
+                ?>
+            </div>
         </div>
     </header>
     <div id="container">
-        <div id="main">
-            <div id="left_text" class="text_body_left">
-                <h2> Welcome to Glitchy Cyborg </h2>
-                <p>This is a test environment</p>
-                <script>
-$('body').terminal({
-    cat: function() {
-        this.echo($('<img src="https://placekitten.com/408/287">'));
-    }
-});
-$('body').terminal({
-    hello: function(what) {
-        this.echo('Hello, ' + what +
-                  '. Wellcome to this terminal.');
-    }
-}, {
-    greetings: 'My First Terminal'
-});
-                
-                </script>
-            </div>
+        <main class="page_content">
+            <div class="main_content">
+                <div class="welcome main_grid">
+                    <section class="welcome main_grid_row">
+                        <div class="main_row_sub">
+                            <div class="main_title">
+                                <h2> Test environment </h2>
+                            </div>
+                            <p>Thank you for visiting, Glitchy Cyborg is currently under construction
+                            Come back and visit us in a couple months </p>
+                            <br>
+                            <p>In the meantime, here is an picture of a <a href="../Assets/Pictures/puppy.jpg"> Puppy! </a></p>
+                        </div>
+                    </section>
+                    <section class="main_grid_row">
+                        <div class="main_row_sub">
+                            <button id="modal-btn">Open Modal</button>
+                            <div id="sign-in-modal" class="modal">
+                                <div class="modal_content">
+                                    <div class="modal_header">
+                                        <span class="close">&times;</span>
+                                        <h2>Log in </h2>
+                                    </div>
+                                    <div class="modal_body">
+                                    <section class="sub_cell">
+                                        <form action="authenticate.php" method="POST">
+                                            <div class="fieldset">
+                                                <div class="input_sect">
+                                                    <div class="input_field">
+                                                        <label>
+                                                            <input id="uname" type="text" name ="uname" class="input_text"/>
+                                                            <label for="uname" class="input_label">Username</label>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="input_sect">
+                                                    <div class="input_field">
+                                                        <label>
+                                                            <input id="psswd" type="password" name ="psswd" required="required" class="input_text"/>
+                                                            <label for="psswd" class="input_label">Password</label>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <input type="submit" value="submit" />
+                                            </div>
+                                        </form>
+                                    </section>
+                                    </div>
+                                    <div class="modal_footer">
+                                        <h4>Regsiter for an account</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+// Get the modal
+var modal = document.getElementById("sign-in-modal");
 
-            <div id="right_text" class="text_right_body">
-                <div class="search-container" class="right-el">
-                    <form action="search_site.php">
-                        <input type="text" placeholder="search..." class="search-content">
-                        <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
-                    </form>
-                </div>
-                <div class="right_el">
-                    <h2> News </h2>
+// Get the button that opens the modal
+var btn = document.getElementById("modal-btn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+                        </div>
+                    </section>
+                    <section class="main_grid_row">
+                        <div class="main_row_sub">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+                            mollit anim id est laborum.</p>
+                        </div>
+                    </section>
+                    <section class="main_grid_row">
+                        <div class="main_row_sub">
+                            <div class="sub_content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+                                mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+                        <div class="main_row_sub">
+                            <div class="sub_content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+                                mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
-        </div>
+            <div class="right_col">
+                <div class="col_content_grid">
+                    <div class="search_container right_el">
+                        <form action="search_site.php">
+                            <input type="text" placeholder="search..." class="search-content">
+                            <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+                        </form>
+                        <br>
+                        <h2> News </h2>
+                    </div>
+                    <div class="right_el">
+                        <?php
+                            $news_dir = '../Assets/News/';
+                            $files =  (scandir($news_dir));
+                            foreach($files as $news)
+                            {
+                                $content = file_get_contents($news_dir . $news);
+                                if ($content) echo <<< _END
+                                    <p>$content</p>
+                                    <br>
+                                    <br>
+                                _END;
+                            }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script type="text/javascript" src="../Assets/JS/menudrop.js"></script>
     </div>
     <footer id="footer">
         <p>Check out our <a href="https://github.com/dpgraham4401/glitchycyborg">GitHub </a> for updates</p>
         <?php
-        echo "Last Commit<br>";
+        echo "Last Commit: ";
         system("git log -1 --format=%cd | awk '{print $1,$2,$3}'");
         ?>
     </footer>
