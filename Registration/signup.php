@@ -84,7 +84,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <input type="submit" value="submit" />
+                                        <input type="submit" value="submit" class="submit_btn"/>
                                     </div>
                                 </form>
                             </section>
@@ -164,7 +164,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <input type="submit" value="submit" />
+                                        <input type="submit" value="submit" class="subit_btn"/>
                                     </div>
                                 </form>
                             </section>

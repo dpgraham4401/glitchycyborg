@@ -309,10 +309,25 @@ main {
     font-size: 14px;
 }
 
+.submit_btn {
+    transition-duration: .2s;
+    border: none;
+    padding: 0px 8px;
+    border-radius: 16px;
+    font-weight: bold;
+    background-color: silver;
+    }
+  
+  .submit_btn:hover {
+        background-color: gainsboro;
+        border: none;
+        border-radius: 16px;
+    }
+
 .input_label{
     position: absolute;
     top: 4px;
-    left: 10px;
+    left: 16px;
     /* transform: translateY(0); */
     font-size: 12px;
     
@@ -373,8 +388,8 @@ main {
 }
 
 .modal_header {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
     padding: 8px 16px;
     background-color: lightsteelblue;
     color: white;
@@ -382,12 +397,12 @@ main {
 
 .modal_body {
     padding: 16px 16px;
-    border-radius: 10px;
+    border-radius: 16px;
 }
 
 .modal_footer {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
     padding: 8px 16px;
     background-color: lightsteelblue;
     color: white;

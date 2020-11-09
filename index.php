@@ -89,7 +89,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <input type="submit" value="submit" />
+                                        <input type="submit" value="submit" class="submit_btn"/>
                                     </div>
                                 </form>
                             </section>
