@@ -115,6 +115,7 @@
                             </div>
                             <section class="sub_cell">
                                 <form action="registration.php" method="POST" onsubmit="return validate(this)">
+                                <!-- <form action="registration.php" method="POST"> -->
                                     <div class="fieldset">
                                         <div class="input_sect">
                                             <div class="input_field">
@@ -170,36 +171,6 @@
                             </section>
                         </section>
                     </section>
-                    <!-- <section class="cell_row">
-                        <section id = "login_form" class = "cell_sub_col">
-                            <div class="card_title">
-                                <h2>Login</h2>
-                            </div>
-                            <section class="sub_cell">
-                                <form action="authenticate.php" method="POST">
-                                    <div class="fieldset">
-                                        <div class="input_sect">
-                                            <div class="input_field">
-                                                <label>
-                                                    <input id="uname" type="text" name ="uname" class="input_text"/>
-                                                    <label for="uname" class="input_label">Username</label>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="input_sect">
-                                            <div class="input_field">
-                                                <label>
-                                                    <input id="psswd" type="password" name ="psswd" required="required" class="input_text"/>
-                                                    <label for="psswd" class="input_label">Password</label>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <input type="submit" value="submit" />
-                                    </div>
-                                </form>
-                            </section>
-                        </section>
-                    </section> -->
                     <section class="cell_row">
                         <section id = "google_form" class = "cell_sub_col">
                             <div class="card_title">
@@ -207,7 +178,6 @@
                             </div>
                             <section class="sub_cell">
                                 <div class="sub_content">
-                                    <!-- <h4 id="goog_title"> Currently signing in with google works <br> but your usename will not be logged </h4> -->
                                     <p>Currently signing in with google connects to their API but no infomation is logged</p>
                                     <fieldset>
                                         <div class="g-signin2" data-onsuccess="onSignIn" ></div>

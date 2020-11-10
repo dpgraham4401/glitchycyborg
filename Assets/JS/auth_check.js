@@ -41,7 +41,7 @@ function validate(form)
        if (psswd1 =="" || psswd2 =="") return "One of the required passwords was not enetered"
         else if (!(psswd1 === psswd2))
             return "Passwords do not match"
-        else if (psswd1 < 6)
+        else if (psswd1 < 8)
             return "Password must be at least 6 characters long, inlcude 1 uppercase, 1 lowercase, adn 1 number.\n"
         else if (!/[a-z]/.test(psswd1) || !/[A-Z]/.test(psswd1) || !/[0-9]/.test(psswd1))
             return "Passwords require one of each: a-z, A-Z, 0-9"
