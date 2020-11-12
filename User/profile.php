@@ -41,9 +41,7 @@
             <div class="menu_sect">
                 <div class="menu_content menu_btn">
                     <button onclick="menudrop()" class="btn" id="dropbtn">Menu <i class="fa fa-caret-down"></i></button>
-                </div>
-                <div class="menu_content">
-                    <div id="myDropdown" class="dropdown-content">
+                    <div id="myDropdown" class="dropdown_content">
                         <a href="http://www.glitchycyb.org"> Home </a>
                         <a href="../Technical/tech_Specs.php"> Tech Specs </a> 
                         <a href="#Comment"> Leave Feedback</a>
@@ -54,9 +52,7 @@
                         echo <<< _END
                         <div class="menu_content menu_btn">
                             <button onclick="profiledrop()" class="btn" id="dropbtn">$uname <i class="fa fa-caret-down"></i></button>
-                        </div>
-                        <div class="menu_content">
-                            <div id="myProfile" class="dropdown-content">
+                            <div id="myProfile" class="dropdown_content">
                                 <a href="profile.php"> Profile </a>
                                 <a href="allocation.php"> Allocation </a>
                                 <a href="../Registration/endsession.php"> Log out </a>

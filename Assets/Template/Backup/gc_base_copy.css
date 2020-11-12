@@ -94,7 +94,7 @@ a:hover {
     background-color: Gainsboro;
 }
 
-.dropdown-content {
+.dropdown_content {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
@@ -103,14 +103,14 @@ a:hover {
   z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown_content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #ddd}
+.dropdown_content a:hover {background-color: #ddd}
 
 .show {display:block;}
 /* End base style */

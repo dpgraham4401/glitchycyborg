@@ -14,88 +14,7 @@
 	      content="David Graham" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	
-    <title> Glitchy | Cyborg</title>
-    
-    <style>
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal_content {
-    border-radius: 20px;
-    position: relative;
-    background-color: #fff;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 50%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
-}
-
-/* Add Animation */
-@-webkit-keyframes animatetop {
-  from {top:-300px; opacity:0} 
-  to {top:0; opacity:1}
-}
-
-@keyframes animatetop {
-  from {top:-300px; opacity:0}
-  to {top:0; opacity:1}
-}
-
-/* The Close Button */
-.close {
-  color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.modal_header {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding: 8px 16px;
-    background-color: lightsteelblue;
-    color: white;
-}
-
-.modal_body {
-    padding: 16px 16px;
-    border-radius: 10px;
-}
-
-.modal_footer {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding: 8px 16px;
-    background-color: lightsteelblue;
-    color: white;
-}
-</style>
+	<title> Glitchy | Cyborg</title>
 </head>
     <body>
     <?php
@@ -118,9 +37,7 @@
             <div class="menu_sect">
                 <div class="menu_content menu_btn">
                     <button onclick="menudrop()" class="btn" id="dropbtn">Menu <i class="fa fa-caret-down"></i></button>
-                </div>
-                <div class="menu_content">
-                    <div id="myDropdown" class="dropdown-content">
+                    <div id="myDropdown" class="dropdown_content">
                         <a href="http://www.glitchycyb.org"> Home </a>
                         <a href="../Technical/tech_Specs.php"> Tech Specs </a> 
                         <a href="#Comment"> Leave Feedback</a>
@@ -131,9 +48,7 @@
                         echo <<< _END
                         <div class="menu_content menu_btn">
                             <button onclick="profiledrop()" class="btn" id="dropbtn">$uname <i class="fa fa-caret-down"></i></button>
-                        </div>
-                        <div class="menu_content">
-                            <div id="myProfile" class="dropdown-content">
+                            <div id="myProfile" class="dropdown_content">
                                 <a href="../User/profile.php"> Profile </a>
                                 <a href="../User/allocation.php"> Allocation </a>
                                 <a href="../Registration/endsession.php"> Log out </a>
@@ -170,7 +85,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <input type="submit" value="submit" />
+                                        <input type="submit" value="submit" class="submit_btn"/>
                                     </div>
                                 </form>
                             </section>
@@ -197,81 +112,21 @@
                     <section class="welcome main_grid_row">
                         <div class="main_row_sub">
                             <div class="main_title">
-                                <h2> Test environment </h2>
+                                <h2> Test </h2>
                             </div>
-                            <p>Thank you for visiting, Glitchy Cyborg is currently under construction
-                            Come back and visit us in a couple months </p>
+                            <p>Test page</p>
                             <br>
                             <p>In the meantime, here is an picture of a <a href="../Assets/Pictures/puppy.jpg"> Puppy! </a></p>
                         </div>
                     </section>
                     <section class="main_grid_row">
                         <div class="main_row_sub">
-                            <button id="modal-btn">Open Modal</button>
-                            <div id="sign-in-modal" class="modal">
-                                <div class="modal_content">
-                                    <div class="modal_header">
-                                        <span class="close">&times;</span>
-                                        <h2>Log in </h2>
-                                    </div>
-                                    <div class="modal_body">
-                                    <section class="sub_cell">
-                                        <form action="authenticate.php" method="POST">
-                                            <div class="fieldset">
-                                                <div class="input_sect">
-                                                    <div class="input_field">
-                                                        <label>
-                                                            <input id="uname" type="text" name ="uname" class="input_text"/>
-                                                            <label for="uname" class="input_label">Username</label>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="input_sect">
-                                                    <div class="input_field">
-                                                        <label>
-                                                            <input id="psswd" type="password" name ="psswd" required="required" class="input_text"/>
-                                                            <label for="psswd" class="input_label">Password</label>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <input type="submit" value="submit" />
-                                            </div>
-                                        </form>
-                                    </section>
-                                    </div>
-                                    <div class="modal_footer">
-                                        <h4>Regsiter for an account</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <script>
-// Get the modal
-var modal = document.getElementById("sign-in-modal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("modal-btn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+                            mollit anim id est laborum.</p>
                         </div>
                     </section>
                     <section class="main_grid_row">
@@ -336,7 +191,7 @@ window.onclick = function(event) {
                 </div>
             </div>
         </main>
-        <script type="text/javascript" src="../Assets/JS/menudrop.js"></script>
+        <script type="text/javascript" src="../Assets/JS/menufunc.js"></script>
     </div>
     <footer id="footer">
         <p>Check out our <a href="https://github.com/dpgraham4401/glitchycyborg">GitHub </a> for updates</p>

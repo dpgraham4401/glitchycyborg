@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href="../Assets/CSS/gc_base.css" type="text/css" rel="stylesheet" />
+    <link href="../Assets/CSS/gc_base.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<meta name="description"
 	      content="single board computer clusters" />
@@ -36,11 +37,9 @@
             <div class="menu_sect">
                 <div class="menu_content menu_btn">
                     <button onclick="menudrop()" class="btn" id="dropbtn">Menu <i class="fa fa-caret-down"></i></button>
-                </div>
-                <div class="menu_content">
-                    <div id="myDropdown" class="dropdown-content">
+                    <div id="myDropdown" class="dropdown_content">
                         <a href="http://www.glitchycyb.org"> Home </a>
-                        <a href="Technical/tech_Specs.php"> Tech Specs </a> 
+                        <a href="../Technical/tech_Specs.php"> Tech Specs </a> 
                         <a href="#Comment"> Leave Feedback</a>
                     </div>
                 </div>
@@ -49,11 +48,9 @@
                         echo <<< _END
                         <div class="menu_content menu_btn">
                             <button onclick="profiledrop()" class="btn" id="dropbtn">$uname <i class="fa fa-caret-down"></i></button>
-                        </div>
-                        <div class="menu_content">
-                            <div id="myProfile" class="dropdown-content">
-                                <a href="User/profile.php"> Profile </a>
-                                <a href="User/allocation.php"> Allocation </a>
+                            <div id="myProfile" class="dropdown_content">
+                                <a href="../User/profile.php"> Profile </a>
+                                <a href="../User/allocation.php"> Allocation </a>
                                 <a href="./Registration/endsession.php"> Log out </a>
                             </div>
                         </div>
