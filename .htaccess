@@ -1,8 +1,20 @@
-RewriteEngine on
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_METHOD} POST
+RewriteRule ^ - [L]
 
-#1)externally redirect "/file.php" to "/file"   
+#externally redirect "/file.php" to "/file"   
 RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
 RewriteRule ^ /%1 [NC,L,R]
-#2)Internally map "/file" back to "/file.php"
+
+#Internally map "/file" back to "/file.php"
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*?)/?$ /$1.php [NC,L]
+
+
+
+# Prevent Apache from serving .ht* files:
+<FilesMatch "^\.ht">
+Order allow,deny
+Deny from all
+</FilesMatch>

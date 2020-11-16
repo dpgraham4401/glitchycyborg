@@ -92,7 +92,7 @@
                             </div>
                             <div class="modal_footer">
                                 <div class="menu_content menu_btn">
-                                    <a href="../Registration/signup.php">
+                                    <a href="Registration/signup.php">
                                     <button class="btn">Or Sign up</button>
                                     </a>
                                 </div>

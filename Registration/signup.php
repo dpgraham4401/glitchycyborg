@@ -112,7 +112,6 @@
                             </div>
                             <section class="sub_cell">
                                 <form action="registration.php" method="POST" onsubmit="return validate(this)">
-                                <!-- <form action="registration.php" method="POST"> -->
                                     <div class="fieldset">
                                         <div class="input_sect">
                                             <div class="input_field">

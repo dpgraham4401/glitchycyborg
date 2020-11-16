@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="../Assets/CSS/gc_base.css" type="text/css" rel="stylesheet" />
+    <link href="../Assets/CSS/cellformat.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<meta name="description"
@@ -106,15 +106,31 @@
         </div>
     </header>
     <div id="container" >
-        <div id="main">
-            <div id="left_text">
-                <h3 id="thanks"> Thanks for Signing up! </h3>
-                <p>You can head back to our <a href="http://www.glitchycyb.org"> homepage </a> or... I dunno, do what you want. 
-                There's nothing else on the site yet soooo... yeaahhhh. This is awkward.</p>
-                <br>
-                <p>Eventually there'll be something here on how to get started after signing up</p>
+    <main class="page_content">
+            <div class="cells">
+                <div class="cell_grid">
+                    <section class="cell_row">
+                        <section class = "cell_sub_col">
+                            <div class="card_title">
+                                <h2>Thanks for signing up!</h2>
+                            </div>
+                            <section class="sub_cell">
+                                <p> You can head back to our <a href="http://www.glitchycyb.org">homepage</a> or... I dunno, do what you want. 
+                                    There's nothing else on the site yet soooo... yeaahhhh. This is awkward.
+                                    Eventually there'll be something here on how to get started after signing up
+                                </p>
+                                <style>
+                                    .cell_sub_col{
+                                        min-width: 600px;
+                                        min-height: 400px;
+                                    }
+                                </style>
+                            </section>
+                        </section>
+                    </section>
+                </div>
             </div>
-        </div>
+        </main>
     </div>
     <script type="text/javascript" src="../Assets/JS/menufunc.js"></script>
     <footer id="footer">

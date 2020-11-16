@@ -128,20 +128,23 @@ main {
     padding-bottom: 90px;
     padding-right: 40px;
     padding-left: 40px;
+    
 }
 
 .cell_grid{
     display: grid;
     max-width: 1200px;
     box-sizing: border-box;
-    gap: 32px;
+    justify-content: center;
+    gap: 64px;
 }
 
 .cell_row{
     display: grid;
     align-content: start;
     box-sizing: border-box;
-    gap: 32px;
+    gap: 64px;
+    min-width: 300px;
 }
 
 .cell_sub_col{
@@ -237,7 +240,6 @@ main {
 
     .cell_row{
         grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) );;
-
     }
 }
 
