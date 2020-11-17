@@ -92,7 +92,7 @@
             $stmt->close();
             $conn->close();
     
-            header("Location: thanks.php");
+            header("Location: ../thanks.php");
             die();
 
     }

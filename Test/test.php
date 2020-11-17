@@ -28,7 +28,7 @@
         <div class="menu_wrapper">
             <div class="menu_sect">
                 <div class="menu_icon menu_content">
-                    <img src="../Assets/Pictures/icon3_60x54.png" alt="icon"/>
+                    <img src="../Assets/Pictures/Icons/icon3_60x54.png" alt="icon"/>
                 </div>
                 <div class="menu_title menu_content">
                     <h2> Glitchy Cyborg </h2>
@@ -51,7 +51,7 @@
                             <div id="myProfile" class="dropdown_content">
                                 <a href="../User/profile.php"> Profile </a>
                                 <a href="../User/allocation.php"> Allocation </a>
-                                <a href="../Registration/endsession.php"> Log out </a>
+                                <a href="../Registration/Reg_scripts/endsession.php"> Log out </a>
                             </div>
                         </div>
                         _END;
@@ -67,7 +67,7 @@
                             </div>
                             <div class="modal_body">
                             <section class="sub_cell">
-                                <form action="../Registration/authenticate.php" method="POST">
+                                <form action="../Registration/Reg_scripts/authenticate.php" method="POST">
                                     <div class="fieldset">
                                         <div class="input_sect">
                                             <div class="input_field">

@@ -30,7 +30,7 @@
                 $_SESSION['uname'] = $row[2];
                 $_SESSION['email'] = $row[3];
                 $conn->close();
-                header("Location: ../User/profile.php");
+                header("Location: ../../User/profile.php");
                 die();
              }
              else die("Invalid username/password combination");

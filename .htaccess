@@ -11,10 +11,15 @@ RewriteRule ^ /%1 [NC,L,R]
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*?)/?$ /$1.php [NC,L]
 
-
-
 # Prevent Apache from serving .ht* files:
 <FilesMatch "^\.ht">
 Order allow,deny
 Deny from all
 </FilesMatch>
+
+#Prevent users from viewing directories in the browser
+Options -Indexes
+
+#Custom error handling
+ErrorDocument 403 /Errors/gc403.php
+ErrorDocument 404 /Errors/gc403.php
