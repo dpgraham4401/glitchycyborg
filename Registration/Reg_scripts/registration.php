@@ -47,7 +47,7 @@
             !(preg_match('/[0-9]+/', $_POST['psswd1'], $matches)))
         {
             echo <<<_END
-            <h3>Oops! Password requires at least 1 Upper, 1 lower, 1 number </h3>
+            <h3>Oops! Password requires at least 8 character, 1 Upper, 1 lower, 1 number </h3>
             <a href="signup.php" > Try again </a>
             
             _END; 

@@ -26,7 +26,7 @@
         $lname = htmlspecialchars($_SESSION['lname']);
         $uname = htmlspecialchars($_SESSION['uname']);
         $email = htmlspecialchars($_SESSION['email']);
-        require_once "../Registration/Reg_scripts/editprofile.php"
+        // require_once "../Registration/Reg_scripts/editprofile.php"
     ?>
     <header class="top_bar">
         <div class="menu_wrapper">
